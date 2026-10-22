@@ -1,186 +1,1244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#f7f2ed" />
-<title>Maison Muse — Fashion Boutique</title>
-<style>
-:root{--bg:#f7f3ee;--ink:#322b35;--muted:#8c828a;--pink:#bd668a;--berry:#a64370;--pink-50:#fff1f5;--border:#eadfe0;--white:#fffdfb;--green:#528d75;--amber:#dc9c47;--shadow:0 15px 45px rgba(75,51,59,.07)}
-*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 18% 2%,#fff9f4 0%,transparent 36%),radial-gradient(ellipse at 94% 45%,#f4eaf0 0%,transparent 37%),var(--bg);font:14px/1.45 'Avenir Next',Avenir,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}button{font:inherit;cursor:pointer;transition:background .15s,transform .15s,border-color .15s}button:active{transform:scale(.975)}button:disabled{cursor:not-allowed;opacity:.42;transform:none}button:focus-visible{outline:3px solid #cb779e;outline-offset:2px}button svg{width:17px;height:17px;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:1.75}button span.emoji{font-size:20px;line-height:1}
-.shell{max-width:1580px;margin:auto;padding:20px 30px 26px}.header{display:flex;align-items:center;gap:22px;justify-content:space-between;margin-bottom:20px}.identity{display:flex;align-items:center;gap:13px;flex:none}.mark{width:49px;height:49px;border-radius:17px;background:linear-gradient(140deg,#d88fac,#ab547c);box-shadow:0 7px 17px #ca9aa9aa;display:grid;place-items:center;color:white;font-family:Georgia,serif;font-size:29px;font-style:italic}.brand{line-height:1}.brand b{font-family:Georgia,serif;font-size:24px;font-weight:500;letter-spacing:-1.2px}.brand small{display:block;margin-top:7px;color:#9b7a8a;letter-spacing:2.8px;text-transform:uppercase;font-size:8px;font-weight:800}.header-stats{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px}.stat{min-width:110px;height:52px;display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.78);border:1px solid #efe4e3;padding:8px 12px;border-radius:15px}.stat-icon{width:32px;height:32px;display:grid;place-items:center;border-radius:11px;background:#faedf3;color:#b85d81;font-size:17px}.stat .lbl{font-size:10px;font-weight:700;color:#9b9196;letter-spacing:.6px;text-transform:uppercase}.stat strong{display:block;font-size:16px;line-height:1.2;font-weight:800;font-variant-numeric:tabular-nums}.stat .positive{color:#48876f}.pill-day{display:flex;align-items:center;gap:8px;color:#977d8a;font-weight:700;font-size:12px;padding:0 8px}
-.appgrid{display:grid;grid-template-columns:minmax(0,1fr) 338px;gap:20px;align-items:start}.left{min-width:0}.scene-card,.side,.bottom-card{background:var(--white);border:1px solid #ebdfe0;border-radius:25px;box-shadow:var(--shadow)}.scene-card{overflow:hidden}.scene-top{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 21px 8px}.scene-heading{display:flex;align-items:center;gap:10px}.scene-heading h1{font-family:Georgia,serif;font-size:22px;font-weight:500;line-height:1.2;margin:0}.scene-heading p{font-size:11px;margin:4px 0 0;color:#998b91}.level-tag{background:#f8edf1;border:1px solid #efd7e2;border-radius:99px;color:#b26989;padding:5px 10px;font-size:10px;font-weight:800;white-space:nowrap}.tools{display:flex;gap:7px;align-items:center}.iconbtn{border:1px solid #eadfe0;background:#fff;color:#896c7b;border-radius:11px;width:34px;height:34px;display:grid;place-items:center}.iconbtn:hover,.iconbtn.on{color:#a64775;background:#fcedf2;border-color:#e9bccc}.edit-btn{border:1px solid #e8d5db;background:#fff8fa;color:#ab547c;padding:8px 11px;font-size:11px;font-weight:800;border-radius:11px}.edit-btn.on{background:#af557e;color:white;border-color:#af557e}.canvas-wrap{position:relative;margin:0 12px 0;overflow:hidden;border-radius:17px;background:#faf1ec;touch-action:manipulation}.canvas-wrap canvas{display:block;width:100%;height:auto;aspect-ratio:1000/700;cursor:default}.canvas-wrap.placing canvas{cursor:crosshair}.scene-chip{position:absolute;z-index:2;bottom:14px;left:14px;display:flex;align-items:center;gap:6px;background:#fffdf8e8;box-shadow:0 4px 15px #51374116;border:1px solid #f2e6e4;border-radius:12px;padding:8px 12px;font-size:11px;font-weight:700;color:#77696f;pointer-events:none}.scene-chip i{display:inline-block;width:7px;height:7px;border-radius:100%;background:#72b294;box-shadow:0 0 0 3px #e7f7ee}.place-hint{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:#3b303f;color:#fff;padding:10px 15px;border-radius:12px;font-size:12px;font-weight:650;box-shadow:0 6px 20px #0002;text-align:center;z-index:3;max-width:90%}.hidden{display:none!important}.scene-footer{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:13px 21px 17px}.meter-box{flex:1;min-width:150px}.meter-header{display:flex;justify-content:space-between;color:#8f8188;font-size:10px;font-weight:800;margin-bottom:7px}.meter-header b{color:#b15e82}.track{height:7px;border-radius:10px;background:#f5eaf0;overflow:hidden}.track span{display:block;background:linear-gradient(90deg,#d487aa,#ac5e8c);height:100%;width:0;border-radius:10px;transition:width .25s}.footer-tip{font-size:11px;color:#a09499;max-width:270px}.footer-tip strong{color:#976579}
-.side{overflow:hidden}.side-title{padding:20px 21px 13px;border-bottom:1px solid #f0e7e6}.eyebrow{color:#b06c8b;letter-spacing:2px;font-size:9px;font-weight:900;text-transform:uppercase}.side-title h2{font-family:Georgia,serif;font-weight:500;font-size:24px;margin:3px 0 0}.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:9px;gap:4px;border-bottom:1px solid #f0e7e6}.tab{background:transparent;border:0;border-radius:10px;padding:9px 4px;color:#9b8991;font-size:11px;font-weight:800}.tab.active{background:#f8edf1;color:#aa4c76}.panel{padding:16px 17px 15px;min-height:427px}.section-label{color:#9c8b92;letter-spacing:1.3px;text-transform:uppercase;font-size:10px;font-weight:900;margin:0 0 10px}.production-grid{display:grid;gap:9px}.prod-item{display:grid;grid-template-columns:53px 1fr auto;align-items:center;gap:9px;border:1px solid #efe5e4;border-radius:15px;padding:10px 9px;background:#fffdfd}.fashion-visual{width:48px;height:51px;display:grid;place-items:center;border-radius:11px;position:relative;font-size:27px}.fashion-visual.top{background:#f3e5e9}.fashion-visual.dress{background:#eae8f6}.fashion-visual.jacket{background:#e6eef2}.fashion-visual::after{content:'✦';position:absolute;font-size:9px;color:#c38e97;top:4px;right:6px}.prod-item .item-name{font-size:12px;font-weight:900}.prod-item .item-details{font-size:10px;color:#a2949b;margin-top:3px}.prod-item .item-profit{font-size:10px;color:#598c77;margin-top:4px;font-weight:800}.small-action{font-size:11px;font-weight:800;color:#ad4b7a;border-radius:10px;padding:9px 8px;background:#fff2f7;border:1px solid #edcbd9;min-width:65px}.small-action:not(:disabled):hover{background:#f7dce8}.small-action.strong{background:#b76288;border-color:#b76288;color:white}.small-action.strong:not(:disabled):hover{background:#a64975}.disabled-cover{opacity:.59}.production-status{margin-top:15px;border-radius:14px;background:#f9f2f5;border:1px solid #f0e1e7;padding:11px 12px}.production-status .job-title{font-size:11px;display:flex;justify-content:space-between;gap:7px;font-weight:800}.production-status .job-title span:last-child{color:#b65c83;font-variant-numeric:tabular-nums}.production-status .track{margin-top:10px;background:#eadce5}.production-status .queue-info{margin-top:9px;color:#9a8791;font-size:10px}.info-line{display:flex;gap:8px;align-items:flex-start;color:#91868c;font-size:11px;line-height:1.5;margin-top:13px}.info-line .dot{flex:none;color:#b87794;font-size:14px;line-height:1}.decor-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.decor-card{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;border:1px solid #ede1e4;border-radius:15px;background:#fff;padding:10px;min-height:120px;text-align:left}.decor-card:hover{background:#fff8fb;border-color:#ddb5c6}.decor-card .deco-emoji{font-size:29px;line-height:1.2}.decor-card b{font-size:11px;margin-top:6px}.decor-card .price{font-size:11px;font-weight:800;color:#af6387;margin-top:4px}.decor-card.locked{opacity:.45}.help-row{background:#fbf4f6;border-radius:13px;padding:11px 12px;font-size:11px;color:#8e7985;margin-top:13px}.selection-box{margin-top:12px;border:1px solid #ecd9e2;border-radius:13px;padding:11px;background:#fff9fb}.selection-box b{font-size:12px}.selection-box p{font-size:10px;color:#978893;margin:6px 0 9px}.button-row{display:flex;flex-wrap:wrap;gap:6px}.chipbtn{border:1px solid #e8d6dc;background:white;color:#935978;padding:7px 9px;border-radius:9px;font-size:10px;font-weight:800}.chipbtn.selected{background:#b26189;color:white;border-color:#b26189}.staff-card{display:flex;align-items:center;gap:11px;border:1px solid #efe3e3;border-radius:15px;padding:12px;margin-bottom:9px}.staff-icon{flex:0 0 47px;height:47px;border-radius:13px;display:grid;place-items:center;font-size:27px;background:#f7e5ed}.staff-meta{flex:1}.staff-meta b{font-size:12px}.staff-meta p{font-size:10px;color:#93888c;margin:4px 0}.staff-note{border-left:3px solid #cf8da7;background:#faf2f5;padding:11px 12px;border-radius:0 11px 11px 0;color:#916f82;font-size:11px;margin-top:12px}.side-bottom{padding:14px 18px 17px;background:#fffcfb;border-top:1px solid #f0e7e6}.goal-header{display:flex;justify-content:space-between;gap:10px;align-items:center}.goal-header b{font-size:11px}.goal-header span{font-size:10px;color:#ba6d8a;font-weight:900}.goal-desc{font-size:11px;color:#9a8891;margin:7px 0 11px}.goal-track{height:7px;background:#f2e9ed;border-radius:10px;overflow:hidden}.goal-track span{height:100%;background:linear-gradient(90deg,#e6ae9a,#c77794);display:block;width:5%;transition:width .25s;border-radius:10px}.goal-reward{color:#9b8793;font-size:10px;margin-top:8px}
-.bottom{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;margin-top:16px}.bottom-card{box-shadow:none;padding:17px 19px;min-height:130px}.bottom-title{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-bottom:13px}.bottom-title h3{font-family:Georgia,serif;font-size:18px;font-weight:500;margin:0}.bottom-title span{font-size:10px;color:#ab7b90;font-weight:800}.collection-row{display:flex;gap:12px}.collection{display:flex;align-items:center;gap:8px;flex:1;min-width:0}.collection .fashion-visual{width:39px;height:40px;flex:none;font-size:20px}.collection label{display:block;white-space:nowrap;font-size:10px;color:#94848b;font-weight:800}.collection strong{font-size:16px;font-weight:900;font-variant-numeric:tabular-nums}.collection small{font-size:9px;color:#aea1a6;display:block}.log-list{display:grid;gap:8px;max-height:90px;overflow-y:auto}.log-line{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:11px;color:#827780}.log-line small{font-size:10px;color:#bea6b0;white-space:nowrap}.log-line strong{color:#5b9980}.settings{display:flex;align-items:center;justify-content:space-between;padding:13px 9px 0;color:#a797a0;font-size:10px}.link-btn{color:#ac8193;background:none;border:0;font-size:10px;text-decoration:underline;text-underline-offset:3px;padding:2px}.toast-box{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:20;display:grid;gap:7px;pointer-events:none}.toast{max-width:90vw;border-radius:13px;background:#403441;color:white;padding:11px 16px;font-size:12px;font-weight:700;box-shadow:0 12px 30px #0002;animation:toastIn .25s both}.toast.good{background:#4b8b75}.toast.bad{background:#a95b63}@keyframes toastIn{from{transform:translateY(-12px);opacity:0}to{transform:translateY(0);opacity:1}}.modal-shade{position:fixed;inset:0;background:#34283275;display:grid;place-items:center;z-index:15;padding:18px}.modal{width:min(100%,420px);border-radius:24px;background:#fffdfa;padding:29px;box-shadow:0 25px 90px #291e2b50;text-align:center}.modal .flower{font-size:40px;color:#c4779b}.modal h2{font-family:Georgia,serif;font-weight:500;font-size:29px;margin:10px 0}.modal p{color:#978790;line-height:1.65;font-size:13px}.modal button{border:0;border-radius:12px;background:#b75e86;color:#fff;font-size:12px;font-weight:800;padding:12px 23px;margin-top:12px}.modal .secondary{background:#f7e9ee;color:#9d5576;margin-left:7px}.modal .checkline{display:flex;align-items:center;gap:9px;text-align:left;margin:17px 0 2px;color:#7d6c77;font-size:12px}.checkline input{accent-color:#ad5b82}.confetti{position:fixed;z-index:30;pointer-events:none}.help-badge{font-size:12px;background:#f6ecf0;border-radius:99px;padding:7px 12px;color:#a76581;font-weight:800}
-@media(max-width:1180px){.shell{padding:18px}.appgrid{grid-template-columns:minmax(0,1fr) 308px;gap:13px}.header{align-items:flex-start}.header-stats{gap:6px}.stat{min-width:91px;padding:7px 8px;gap:6px}.stat-icon{width:27px;height:27px}.stat strong{font-size:14px}.stat .lbl{font-size:9px}.side-title h2{font-size:21px}.panel{padding:13px}.bottom{gap:10px}}
-@media(max-width:900px){.appgrid{grid-template-columns:1fr}.header{flex-wrap:wrap}.header-stats{justify-content:flex-start}.side{display:grid;grid-template-columns:1fr}.panel{min-height:0}.production-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.prod-item{grid-template-columns:39px 1fr;gap:7px;align-items:center}.prod-item .fashion-visual{width:39px}.prod-item .small-action{grid-column:1/-1;width:100%}.decor-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.bottom{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.shell{padding:10px}.header{margin:5px 3px 13px;gap:13px}.mark{width:40px;height:40px;font-size:23px;border-radius:13px}.brand b{font-size:20px}.header-stats{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.stat{padding:8px 5px;min-width:0;height:55px;gap:4px}.stat-icon{width:22px;height:22px;border-radius:7px;font-size:13px}.stat strong{font-size:12px}.stat .lbl{font-size:8px;letter-spacing:0}.pill-day{grid-column:1/-1;justify-content:center}.scene-card,.side,.bottom-card{border-radius:17px}.scene-top{padding:13px 12px 9px;min-height:55px}.scene-heading{gap:6px}.scene-heading h1{font-size:17px}.scene-heading p{font-size:9px}.level-tag{padding:3px 5px;font-size:9px}.tools{gap:4px}.iconbtn{width:27px;height:27px}.iconbtn svg{width:14px}.edit-btn{font-size:9px;padding:7px}.canvas-wrap{margin:0 5px;border-radius:11px}.scene-chip{font-size:9px;padding:6px 7px;left:7px;bottom:6px}.place-hint{font-size:10px;padding:7px}.scene-footer{padding:11px;gap:7px}.footer-tip{font-size:9px}.side-title{padding:13px}.side-title h2{font-size:20px}.panel{padding:11px}.production-grid{grid-template-columns:1fr}.prod-item{grid-template-columns:47px 1fr auto}.prod-item .fashion-visual{width:47px}.prod-item .small-action{grid-column:auto;width:auto}.bottom{grid-template-columns:1fr;margin-top:10px}.bottom-card{padding:13px}.collection-row{gap:3px}.collection{gap:5px}.collection .fashion-visual{width:33px;height:36px;font-size:18px}.collection label{font-size:9px}.collection strong{font-size:14px}.settings{flex-wrap:wrap;gap:9px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Trait</title>
+  <style>
+    :root {
+      --bg: #0a1022;
+      --bg2: #101a36;
+      --panel: rgba(14, 25, 51, 0.78);
+      --stroke: rgba(255,255,255,0.08);
+      --text: #f2f6ff;
+      --muted: #a6b3d8;
+      --blue: #61b3ff;
+      --blueGlow: rgba(97, 179, 255, 0.45);
+      --gold: #f5ce6b;
+      --goldGlow: rgba(245, 206, 107, 0.4);
+      --danger: #ff6978;
+      --mint: #5df0c8;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(76, 122, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 18%, rgba(255, 208, 112, 0.15), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(108, 31, 255, 0.22), transparent 30%),
+        linear-gradient(180deg, #09101e, #0d1630 38%, #111835 100%);
+      overflow: hidden;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 18px;
+      padding: 18px;
+      height: 100%;
+    }
+
+    .sidebar, .play-area {
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+    }
+
+    .sidebar {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(97,179,255,0.25), rgba(245,206,107,0.22));
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .logo::before,
+    .logo::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 14px;
+      border: 2px solid rgba(255,255,255,0.18);
+      clip-path: polygon(0 0, 100% 0, 54% 50%, 100% 100%, 0 100%, 46% 50%);
+    }
+    .logo::after {
+      inset: 15px;
+      border-color: rgba(255,255,255,0.34);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      line-height: 1;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+    .tag {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 6px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 22px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #bed0ff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .level-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .level-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.05);
+      color: #dce7ff;
+    }
+
+    .objective {
+      color: #d7e1ff;
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .meter-title, .stats-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+
+    .meter {
+      margin-top: 10px;
+      height: 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .meter > span {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #72b7ff, #7ee3ff 55%, #7ef5cb);
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(94, 191, 255, 0.45);
+      transition: width 0.2s ease;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    button {
+      border: 0;
+      border-radius: 18px;
+      height: 50px;
+      padding: 0 16px;
+      font-weight: 800;
+      font-size: 0.96rem;
+      letter-spacing: 0.02em;
+      color: white;
+      cursor: pointer;
+      transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+    }
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(1px); }
+    button.primary {
+      background: linear-gradient(135deg, #4fa3ff, #7e87ff);
+      box-shadow: 0 18px 34px rgba(86, 143, 255, 0.32);
+    }
+    button.secondary {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #edf2ff;
+    }
+    button.gold {
+      background: linear-gradient(135deg, #ffcc6b, #ff9b61);
+      color: #382000;
+      box-shadow: 0 18px 34px rgba(255, 175, 74, 0.24);
+    }
+    button:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+    .small-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 14px;
+    }
+    .stat .k {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 7px;
+    }
+    .stat .v {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .legend {
+      display: grid;
+      gap: 10px;
+      color: #d8e2ff;
+      font-size: 0.9rem;
+    }
+    .legend-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .dot {
+      width: 12px; height: 12px; border-radius: 999px;
+      box-shadow: 0 0 14px currentColor;
+    }
+
+    .footer-note {
+      margin-top: auto;
+      color: #90a2ca;
+      font-size: 0.83rem;
+      line-height: 1.45;
+    }
+
+    .play-area {
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .headline {
+      font-size: 1.05rem;
+      color: #d8e1ff;
+    }
+    .headline strong { color: white; }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stage-wrap {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)),
+        linear-gradient(180deg, rgba(15,31,67,0.98), rgba(10,18,41,0.98));
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      touch-action: none;
+      cursor: crosshair;
+    }
+
+    .toast {
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      transform: translateX(-50%);
+      padding: 12px 18px;
+      border-radius: 18px;
+      background: rgba(13, 24, 48, 0.82);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      font-weight: 700;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .2s ease;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+    }
+    .toast.show { opacity: 1; }
+
+    @media (max-width: 1080px) {
+      .shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        overflow: auto;
+      }
+      body { overflow: auto; }
+      .play-area { min-height: 68vh; }
+      .footer-note { margin-top: 8px; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { padding: 12px; gap: 12px; }
+      .sidebar, .play-area { border-radius: 22px; }
+      .small-grid, .buttons { grid-template-columns: 1fr; }
+      .topbar { padding-bottom: 10px; }
+    }
+  </style>
 </head>
 <body>
-<div class="shell">
-<header class="header">
-  <div class="identity"><div class="mark">M</div><div class="brand"><b>Maison Muse</b><small>Votre atelier de mode</small></div></div>
-  <div class="header-stats">
-    <div class="stat"><div class="stat-icon">€</div><div><div class="lbl">Trésorerie</div><strong id="cash">0 €</strong></div></div>
-    <div class="stat"><div class="stat-icon">✦</div><div><div class="lbl">Réputation</div><strong id="reputation">0 %</strong></div></div>
-    <div class="stat"><div class="stat-icon">♧</div><div><div class="lbl">Ventes</div><strong id="sales">0</strong></div></div>
-    <div class="stat"><div class="stat-icon">▣</div><div><div class="lbl">Stock total</div><strong id="stockTotal">0</strong></div></div>
-    <div class="pill-day">☀ <span id="dayCount">Jour 01</span></div>
-  </div>
-</header>
-<div class="appgrid">
-  <main class="left">
-    <section class="scene-card">
-      <div class="scene-top">
-        <div class="scene-heading"><div><h1>Ma boutique</h1><p id="sceneSubtitle">Un nouveau chapitre haute couture commence…</p></div><span id="levelTag" class="level-tag">Niv. 1</span></div>
-        <div class="tools">
-          <button title="Aide et règles" id="helpBtn" class="iconbtn" aria-label="Aide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.4 9a2.8 2.8 0 1 1 4.6 2.1c-1.2 1-2 1.5-2 3M12 17.7v.2"/></svg></button>
-          <button title="Zoom arrière" id="zoomOut" class="iconbtn" aria-label="Zoom arrière"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="M8 10.5h5M16 16l5 5"/></svg></button>
-          <button title="Zoom avant" id="zoomIn" class="iconbtn" aria-label="Zoom avant"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="M8 10.5h5M10.5 8v5M16 16l5 5"/></svg></button>
-          <button title="Activer/désactiver le mode décoration" id="editBtn" class="edit-btn">✧ Décorer</button>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Double Trait</h1>
+          <div class="tag">Dessine une seule ligne. Sauve deux mondes.</div>
         </div>
       </div>
-      <div class="canvas-wrap" id="canvasWrap"><canvas id="game" width="1000" height="700" aria-label="Boutique de mode isométrique interactive"></canvas><div class="scene-chip"><i></i><span id="sceneChipText">Boutique ouverte · clients en visite</span></div><div class="place-hint hidden" id="placeHint">Choisissez une case libre pour placer votre objet · Échap pour annuler</div></div>
-      <div class="scene-footer"><div class="meter-box"><div class="meter-header"><span>PROCHAIN NIVEAU</span><b id="xpText">0 / 100 XP</b></div><div class="track"><span id="xpBar"></span></div></div><div class="footer-tip" id="footerTip">✦ Fabrique des vêtements pour remplir tes portants.</div></div>
-    </section>
-    <div class="bottom">
-      <section class="bottom-card"><div class="bottom-title"><h3>Mes collections</h3><span>STOCK DISPONIBLE</span></div><div class="collection-row" id="collections"></div></section>
-      <section class="bottom-card"><div class="bottom-title"><h3>La vie de la boutique</h3><span id="liveClock">EN DIRECT</span></div><div class="log-list" id="activity"></div></section>
-    </div>
-    <div class="settings"><span>Maison Muse • Version 1.0 • Partie conservée dans le navigateur si autorisé</span><div><button class="link-btn" id="saveBtn">Sauvegarder</button><span> · </span><button class="link-btn" id="exportBtn">Exporter</button><span> · </span><button class="link-btn" id="importBtn">Importer</button><span> · </span><button class="link-btn" id="resetBtn">Nouvelle partie</button><input type="file" accept=".json,application/json" id="importInput" hidden></div></div>
-  </main>
-  <aside class="side"><div class="side-title"><div class="eyebrow">LE CARNET DE L'ATELIER</div><h2>Gérer ma boutique</h2></div>
-    <div class="tabs"><button data-tab="production" class="tab active">✂ Produire</button><button data-tab="decor" class="tab">✧ Décorer</button><button data-tab="staff" class="tab">♟ Équipe</button></div>
-    <div class="panel" id="panel"></div>
-    <div class="side-bottom"><div class="eyebrow" style="margin-bottom:9px">MON PROCHAIN DÉFI</div><div class="goal-header"><b id="goalName">Les premières clientes</b><span id="goalProgress">0 / 5</span></div><div class="goal-desc" id="goalDesc">Réalise tes premières ventes.</div><div class="goal-track"><span id="goalBar"></span></div><div class="goal-reward" id="goalReward">Récompense : 150 € + expérience</div></div>
-  </aside>
-</div>
-</div>
-<div class="toast-box" id="toastBox"></div>
-<div class="modal-shade hidden" id="modalShade"><div class="modal" id="modalContent"></div></div>
-<script>
-(()=>{'use strict';
-const $=id=>document.getElementById(id);
-const canvas=$('game');let ctx=canvas.getContext('2d');const W=1000,H=700,NX=9,NY=8,TW=88,TH=46,CX=482,CY=178;
-const products={top:{name:'Hauts élégants',short:'Hauts',emoji:'👚',cost:30,sell:49,count:3,time:6,level:1,color:'#db8a9b'},dress:{name:'Robes romantiques',short:'Robes',emoji:'👗',cost:70,sell:119,count:2,time:11,level:2,color:'#a08bd0'},jacket:{name:'Vestes de créateur',short:'Vestes',emoji:'🧥',cost:110,sell:169,count:2,time:16,level:4,color:'#78a6a8'}};
-const decor={rack:{name:'Portant couture',emoji:'🛍️',cost:170,level:1,desc:'Présente une collection aux clientes.'},plant:{name:'Plante décorative',emoji:'🪴',cost:65,level:1,desc:'Ajoute du charme à la boutique.'},mannequin:{name:'Mannequin chic',emoji:'👗',cost:195,level:2,desc:'Un mannequin pour embellir la vitrine.'},sofa:{name:'Canapé velours',emoji:'🛋️',cost:230,level:2,desc:'Un espace détente élégant.'},machine:{name:'Machine à coudre',emoji:'🧵',cost:330,level:3,desc:'Un atelier supplémentaire décoratif.'},mirror:{name:'Grand miroir',emoji:'🪞',cost:120,level:1,desc:'Permet aux clientes d’admirer leur style.'},booth:{name:'Cabine d’essayage',emoji:'🚪',cost:270,level:3,desc:'Une cabine aux rideaux de velours.'}};
-const missions=[{name:'Premières créations',desc:'Vends 5 vêtements pour lancer ta maison.',need:5,reward:150,xp:50},{name:'Boutique en vogue',desc:'Atteins 15 ventes au total.',need:15,reward:250,xp:90},{name:'Maison renommée',desc:'Atteins 35 ventes au total.',need:35,reward:550,xp:180},{name:'Icône du quartier',desc:'Atteins 65 ventes au total.',need:65,reward:1000,xp:350}];
-const initialItems=[{id:1,type:'machine',x:2,y:1},{id:2,type:'rack',x:4,y:2,collection:'top'},{id:3,type:'rack',x:5,y:3,collection:'top'},{id:4,type:'counter',x:7,y:3},{id:5,type:'plant',x:1,y:5},{id:6,type:'mirror',x:4,y:5},{id:7,type:'booth',x:6,y:1},{id:8,type:'mannequin',x:2,y:4}];
-const defaultState=()=>({cash:690,rep:82,sales:0,level:1,xp:0,day:1,elapsed:0,stock:{top:7,dress:0,jacket:0},items:JSON.parse(JSON.stringify(initialItems)),nextId:9,queue:[],activeJob:null,tailor:false,cashier:false,mission:0,decorCount:0,logs:[{text:'Les portes de Maison Muse sont ouvertes !',kind:'neutral',at:'Maintenant'}],savedAt:Date.now()});
-let state;try{const raw=localStorage.getItem('maison-muse-save-v1');state=raw?Object.assign(defaultState(),JSON.parse(raw)):defaultState();if(!Array.isArray(state.items)||!state.stock)throw Error('save invalid')}catch(e){state=defaultState()}
-let runtime={tab:'production',placing:null,moving:null,hover:null,selected:null,zoom:1,customers:[],particles:[],floaters:[],customerTimer:1.8,elapsedRender:0,uiTimer:0,saveTimer:0,confetti:[],toasts:0,introShown:(()=>{try{return sessionStorage.getItem('maison-muse-help-seen')==='yes'}catch(e){return false}})()};
-let storageAvailable=true;function save(){if(!storageAvailable)return false;try{state.savedAt=Date.now();localStorage.setItem('maison-muse-save-v1',JSON.stringify(state));return true}catch(e){storageAvailable=false;toast('Stockage bloqué : utilise Exporter pour garder ta partie.','bad');return false}}
-const money=n=>Math.floor(n).toLocaleString('fr-FR')+' €';const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));const rand=(a,b)=>a+Math.random()*(b-a);
-function toast(message,kind='normal'){const el=document.createElement('div');el.className='toast '+(kind==='normal'?'':kind);el.textContent=message;$('toastBox').append(el);setTimeout(()=>{el.style.opacity=0;el.style.transition='opacity .4s';setTimeout(()=>el.remove(),450)},3100)}
-function log(text,kind='neutral'){state.logs.unshift({text,kind,at:`Jour ${state.day}`});state.logs=state.logs.slice(0,6)}
-function addXP(amount){state.xp+=amount;let up=false;while(state.xp>=state.level*110){state.xp-=state.level*110;state.level++;up=true;state.cash+=80+state.level*25;}if(up){toast(`Niveau ${state.level} atteint ! Bonus de ${money(80+state.level*25)}`,'good');log(`Nouveau niveau ${state.level} ✨`,'good');sparkle(500,235,22);renderPanel()} }
-function checkMissions(){while(state.mission<missions.length&&state.sales>=missions[state.mission].need){let m=missions[state.mission++];state.cash+=m.reward;addXP(m.xp);log(`Défi réussi : ${m.name} (+${money(m.reward)})`,'good');toast(`Défi accompli ! + ${money(m.reward)}`,'good');sparkle(510,300,20)}}
-function stockTotal(){return Object.values(state.stock).reduce((a,b)=>a+b,0)}
-function renderStats(){ $('cash').textContent=money(state.cash);$('reputation').textContent=Math.round(state.rep)+' %';$('sales').textContent=state.sales;$('stockTotal').textContent=stockTotal();$('dayCount').textContent='Jour '+String(state.day).padStart(2,'0');$('levelTag').textContent='Niv. '+state.level;let target=state.level*110;$('xpText').textContent=`${Math.floor(state.xp)} / ${target} XP`;$('xpBar').style.width=clamp(state.xp/target*100,0,100)+'%';$('collections').innerHTML=Object.entries(products).map(([k,p])=>`<div class="collection"><div class="fashion-visual ${k}">${p.emoji}</div><div><label>${p.short}</label><strong>${state.stock[k]}</strong><small>${state.level<p.level?'Niv. '+p.level:money(p.sell)+' / vente'}</small></div></div>`).join('');$('activity').innerHTML=state.logs.slice(0,3).map(l=>`<div class="log-line"><span>${escapeHTML(l.text)}</span><small>${escapeHTML(l.at)}</small></div>`).join('');const mission=missions[state.mission];if(mission){let prev=state.mission?missions[state.mission-1].need:0;let value=clamp(state.sales-prev,0,mission.need-prev);$('goalName').textContent=mission.name;$('goalDesc').textContent=mission.desc;$('goalProgress').textContent=`${value} / ${mission.need-prev}`;$('goalBar').style.width=`${value/(mission.need-prev)*100}%`;$('goalReward').textContent=`Récompense : ${money(mission.reward)} + ${mission.xp} XP`;}else{$('goalName').textContent='Maison Muse, une légende !';$('goalDesc').textContent='Tous les défis du lancement sont réussis.';$('goalProgress').textContent='✓';$('goalBar').style.width='100%';$('goalReward').textContent='De nouvelles collections arrivent…'}$('sceneSubtitle').textContent=`${state.sales} vente${state.sales>1?'s':''} · ${runtime.customers.length} cliente${runtime.customers.length>1?'s':''} en boutique`}
-function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function renderPanel(){const p=$('panel');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===runtime.tab));$('editBtn').classList.toggle('on',runtime.tab==='decor'||!!runtime.placing||!!runtime.moving);if(runtime.tab==='production'){
- p.innerHTML=`<div class="section-label">Fabrication des collections</div><div class="production-grid">${Object.entries(products).map(([key,obj])=>`<div class="prod-item ${state.level<obj.level?'disabled-cover':''}"><div class="fashion-visual ${key}">${obj.emoji}</div><div><div class="item-name">${obj.name}</div><div class="item-details">${obj.count} pièces · ${obj.time}s</div><div class="item-profit">Vente ${money(obj.sell)} / pièce</div></div><button class="small-action ${state.level>=obj.level?'strong':''}" data-produce="${key}" ${state.level<obj.level||state.cash<obj.cost||state.queue.length>=6?'disabled':''}>${state.level<obj.level?'Niv. '+obj.level:money(obj.cost)}</button></div>`).join('')}</div><div class="production-status" id="productionStatus"></div><div class="info-line"><span class="dot">✦</span><span>Les créations terminées rejoignent ton stock. Les clientes achètent les articles présentés sur les portants.</span></div>`;renderProductionStatus();
-}else if(runtime.tab==='decor'){
- p.innerHTML=`<div class="section-label">Collection de mobilier</div><div class="decor-grid">${Object.entries(decor).map(([key,d])=>`<button class="decor-card ${state.level<d.level?'locked':''}" data-decor="${key}" ${state.level<d.level||state.cash<d.cost?'disabled':''}><span class="deco-emoji">${d.emoji}</span><b>${d.name}</b><span class="price">${state.level<d.level?'Niveau '+d.level:money(d.cost)}</span></button>`).join('')}</div><div class="help-row">✧ Choisis un meuble, puis clique sur une case libre de la boutique pour le placer.</div><div id="selectionBox"></div>`;renderSelection();
-}else{
- p.innerHTML=`<div class="section-label">Mon équipe créative</div><div class="staff-card"><div class="staff-icon">👩🏽‍🎨</div><div class="staff-meta"><b>Camille — Styliste</b><p>${state.tailor?'Atelier optimisé · production 35 % plus rapide':'Atelier classique · confection minutieuse'}</p></div><button class="small-action" id="hireTailor" ${state.tailor||state.cash<330?'disabled':''}>${state.tailor?'✓':money(330)}</button></div><div class="staff-card"><div class="staff-icon">👩🏻‍💼</div><div class="staff-meta"><b>Inès — Responsable</b><p>${state.cashier?'Caisse express · passage 45 % plus rapide':'Caisse standard · service attentionné'}</p></div><button class="small-action" id="hireCashier" ${state.cashier||state.cash<260?'disabled':''}>${state.cashier?'✓':money(260)}</button></div><div class="staff-note">Les améliorations sont permanentes : elles accélèrent la production ou les encaissements. Développe ton équipe au rythme des ventes.</div>`;
-}}
-function renderProductionStatus(){let el=$('productionStatus');if(!el)return;const j=state.activeJob;if(j){let obj=products[j.key],pct=clamp((1-j.remaining/j.total)*100,0,100);el.innerHTML=`<div class="job-title"><span>🧵 En cours : ${obj.short}</span><span>${Math.ceil(j.remaining)}s</span></div><div class="track"><span style="width:${pct}%"></span></div><div class="queue-info">${state.queue.length} création${state.queue.length>1?'s':''} en attente · machine en marche</div>`}else{el.innerHTML=`<div class="job-title"><span>✂ Atelier prêt à créer</span><span>Disponible</span></div><div class="queue-info">Commande une collection pour commencer la confection.</div>`}}
-function renderSelection(){let e=$('selectionBox');if(!e)return;const obj=state.items.find(o=>o.id===runtime.selected);if(!obj){e.innerHTML='<div class="help-row">Astuce : clique aussi sur un meuble dans la boutique pour le déplacer ou personnaliser un portant.</div>';return}const isRack=obj.type==='rack';e.innerHTML=`<div class="selection-box"><b>${decor[obj.type]?.emoji||'🛒'} ${decor[obj.type]?.name||'Comptoir de vente'}</b><p>${isRack?'Sélectionne la collection exposée sur ce portant.':(decor[obj.type]?.desc||'Le cœur de ton commerce.')}</p>${isRack?`<div class="button-row">${Object.entries(products).map(([key,v])=>`<button data-assign="${key}" class="chipbtn ${obj.collection===key?'selected':''}" ${state.level<v.level?'disabled':''}>${v.short}${state.level<v.level?' 🔒':''}</button>`).join('')}</div>`:''}<div class="button-row" style="margin-top:10px"><button class="chipbtn" data-move="${obj.id}" ${obj.type==='counter'?'disabled':''}>↗ Déplacer</button><button class="chipbtn" data-sell="${obj.id}" ${obj.type==='counter'||obj.id<=8?'disabled':''}>Revendre (50 %)</button><button class="chipbtn" data-clear="1">Fermer</button></div></div>`}
-function produce(key){const p=products[key];if(!p||state.level<p.level||state.cash<p.cost||state.queue.length>=6)return;state.cash-=p.cost;const j={key,remaining:p.time*(state.tailor?.65:1),total:p.time*(state.tailor?.65:1)};if(!state.activeJob)state.activeJob=j;else state.queue.push(j);log(`${p.count} ${p.short.toLowerCase()} en préparation`);toast(`Commande lancée : ${p.short} ✂`);refresh();save()}
-function startPlacement(key){let obj=decor[key];if(!obj||state.level<obj.level||state.cash<obj.cost)return;runtime.placing={type:key,cost:obj.cost};runtime.moving=null;runtime.selected=null;runtime.tab='decor';$('placeHint').textContent=`Place ${obj.name.toLowerCase()} sur une case libre · Échap pour annuler`;$('placeHint').classList.remove('hidden');$('canvasWrap').classList.add('placing');renderPanel();toast('Clique sur une case libre de ta boutique.')}
-function cancelPlacement(){runtime.placing=null;runtime.moving=null;$('placeHint').classList.add('hidden');$('canvasWrap').classList.remove('placing');renderPanel()}
-function refresh(){renderStats();renderPanel()}
-$('panel').addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;if(btn.dataset.produce)produce(btn.dataset.produce);else if(btn.dataset.decor)startPlacement(btn.dataset.decor);else if(btn.dataset.assign){const o=state.items.find(o=>o.id===runtime.selected);if(o&&o.type==='rack'&&state.level>=products[btn.dataset.assign].level){o.collection=btn.dataset.assign;toast('Portant modifié !');refresh();save()}}else if(btn.dataset.move){const o=state.items.find(o=>o.id===Number(btn.dataset.move));if(o&&o.type!=='counter'){runtime.moving=o.id;runtime.placing=null;runtime.selected=null;$('placeHint').textContent=`Déplace ce meuble vers une case libre · Échap pour annuler`;$('placeHint').classList.remove('hidden');$('canvasWrap').classList.add('placing');renderSelection()}}else if(btn.dataset.sell){let i=state.items.findIndex(o=>o.id===Number(btn.dataset.sell));if(i!==-1&&state.items[i].id>8){let o=state.items[i];const refund=Math.floor((decor[o.type]?.cost||0)*.5);state.items.splice(i,1);state.cash+=refund;runtime.selected=null;toast(`Meuble revendu : +${money(refund)}`,'good');refresh();save()}}else if(btn.dataset.clear){runtime.selected=null;renderSelection()}else if(btn.id==='hireTailor'&&!state.tailor&&state.cash>=330){state.cash-=330;state.tailor=true;toast('Camille perfectionne son atelier !','good');refresh();save()}else if(btn.id==='hireCashier'&&!state.cashier&&state.cash>=260){state.cash-=260;state.cashier=true;toast('Inès ouvre la caisse express !','good');refresh();save()}});
-document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{runtime.tab=b.dataset.tab;if(runtime.tab!=='decor'&&(runtime.placing||runtime.moving))cancelPlacement();renderPanel()}));$('editBtn').addEventListener('click',()=>{runtime.tab=runtime.tab==='decor'?'production':'decor';if(runtime.tab!=='decor')cancelPlacement();renderPanel()});
-$('saveBtn').addEventListener('click',()=>{if(save())toast('Partie sauvegardée dans ce navigateur.','good');else toast('Utilise Exporter pour garder ta progression.','bad')});
-$('exportBtn').addEventListener('click',()=>{state.savedAt=Date.now();const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='maison-muse-sauvegarde.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Fichier de sauvegarde exporté.','good')});
-$('importBtn').addEventListener('click',()=>$('importInput').click());$('importInput').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!Array.isArray(data.items)||!data.stock||!Number.isFinite(data.cash)||!Number.isFinite(data.sales)||!Number.isFinite(data.level)||!Array.isArray(data.logs))throw Error('Format non reconnu');state=Object.assign(defaultState(),data);runtime.customers=[];runtime.selected=null;cancelPlacement();refresh();save();toast('Partie restaurée avec succès !','good')}catch(err){toast('Fichier de sauvegarde non valide.','bad')}e.target.value='' });$('resetBtn').addEventListener('click',()=>openModal(`<div class="flower">✦</div><h2>Une nouvelle histoire ?</h2><p>Cette action effacera ta boutique actuelle, tes meubles et ta progression enregistrée sur cet appareil.</p><button id="confirmReset">Recommencer</button><button class="secondary" id="cancelReset">Annuler</button>`,()=>{$('confirmReset').onclick=()=>{localStorage.removeItem('maison-muse-save-v1');location.reload()};$('cancelReset').onclick=closeModal}));
-function openModal(html,bind){$('modalContent').innerHTML=html;$('modalShade').classList.remove('hidden');if(bind)bind()}
-function closeModal(){$('modalShade').classList.add('hidden')}
-$('modalShade').addEventListener('click',e=>{if(e.target===$('modalShade'))closeModal()});
-function showHelp(){openModal(`<div class="flower">✂</div><h2>Bienvenue chez Maison Muse</h2><p>Crée des collections dans l’onglet <b>Produire</b>, remplis tes stocks et observe les clientes acheter les vêtements exposés. Développe ta boutique avec <b>Décorer</b>, clique sur un portant pour choisir ce qu’il présente, puis améliore ton personnel dans <b>Équipe</b>.</p><p>Chaque vente rapporte de l’argent et de l’expérience. La progression est enregistrée automatiquement dans ton navigateur.</p><button id="beginGame">Ouvrir ma boutique ✦</button>`,()=>{$('beginGame').onclick=()=>{closeModal();runtime.introShown=true;try{sessionStorage.setItem('maison-muse-help-seen','yes')}catch(e){}}})}
-$('helpBtn').onclick=showHelp;
-$('zoomIn').onclick=()=>{runtime.zoom=clamp(Math.round((runtime.zoom+.1)*10)/10,.8,1.4);toast('Zoom : '+Math.round(runtime.zoom*100)+' %')};$('zoomOut').onclick=()=>{runtime.zoom=clamp(Math.round((runtime.zoom-.1)*10)/10,.8,1.4);toast('Zoom : '+Math.round(runtime.zoom*100)+' %')};
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){cancelPlacement();closeModal()}});
-function iso(x,y){return{x:CX+(x-y)*TW/2,y:CY+(x+y)*TH/2}}
-function invIso(x,y){let dx=(x-CX)/(TW/2),dy=(y-CY)/(TH/2);return{x:Math.floor((dx+dy)/2),y:Math.floor((dy-dx)/2)}}
-function center(o){return iso(o.x+.5,o.y+.5)}
-function tilePoly(x,y){return[iso(x,y),iso(x+1,y),iso(x+1,y+1),iso(x,y+1)]}
-function polygon(points,fill,stroke=null,lw=1){ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);for(let i=1;i<points.length;i++)ctx.lineTo(points[i].x,points[i].y);ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw;ctx.stroke()}}
-function ellipse(x,y,rx,ry,fill){ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.fillStyle=fill;ctx.fill()}
-function rr(x,y,w,h,r,fill,stroke){ctx.beginPath();ctx.roundRect(x,y,w,h,r);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.stroke()}}
-function line(x1,y1,x2,y2,stroke,width=2){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
-function gradient(x1,y1,x2,y2,a,b){let g=ctx.createLinearGradient(x1,y1,x2,y2);g.addColorStop(0,a);g.addColorStop(1,b);return g}
-function shade(hex,amount){let str=hex.replace('#','');let num=parseInt(str,16);let r=clamp((num>>16)+amount,0,255)|0,g=clamp(((num>>8)&255)+amount,0,255)|0,b=clamp((num&255)+amount,0,255)|0;return '#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('')}
-function drawBackdrop(){ctx.fillStyle=gradient(0,0,0,H,'#fcf8f6','#f1e9e7');ctx.fillRect(0,0,W,H);let g=ctx.createRadialGradient(500,250,90,500,300,570);g.addColorStop(0,'#fffdf9');g.addColorStop(1,'#f7eeec00');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.save();ctx.fillStyle='rgba(204,173,176,.13)';for(let i=0;i<55;i++){let x=(i*271+53)%1000,y=(i*159+63)%700;ellipse(x,y,1.5+(i%3),1.5+(i%3),'rgba(191,137,163,.08)')}ctx.restore();ctx.fillStyle='#aa7b8b';ctx.globalAlpha=.55;ctx.font='italic 20px Georgia';ctx.fillText('LA PETITE MAISON DE MODE',70,635);ctx.globalAlpha=1;ctx.font='11px sans-serif';ctx.fillStyle='#bc9fa9';ctx.fillText('COLLECTION • ÉDITION ATELIER',71,655)}
-function drawWalls(){const a=iso(0,0),b=iso(0,NY),c=iso(NX,0);let h=139;
- // Corner walls, an inset band and delicate panelling
- polygon([{x:a.x,y:a.y-h},{x:b.x,y:b.y-h},{x:b.x,y:b.y},{x:a.x,y:a.y}],gradient(0,0,410,390,'#f3dad9','#e3bfc3'),'#d6b1b6',1.5);
- polygon([{x:a.x,y:a.y-h},{x:c.x,y:c.y-h},{x:c.x,y:c.y},{x:a.x,y:a.y}],gradient(485,10,870,390,'#f9e8e3','#e7d2d0'),'#dac7c3',1.5);
- line(a.x,a.y-h,b.x,b.y-h,'#fef4ee',6);line(a.x,a.y-h,c.x,c.y-h,'#fff7ee',6);line(a.x,a.y-18,b.x,b.y-18,'#f8ede7',7);line(a.x,a.y-18,c.x,c.y-18,'#fff7f2',7);line(a.x,a.y-12,b.x,b.y-12,'#c896a3',2);line(a.x,a.y-12,c.x,c.y-12,'#d9abae',2);
- // Raised decorative wall panels
- for(let i=0;i<NY;i++){let p0=iso(0,i+.14),p1=iso(0,i+.84);polygon([{x:p0.x,y:p0.y-113},{x:p1.x,y:p1.y-113},{x:p1.x,y:p1.y-29},{x:p0.x,y:p0.y-29}],'#ffffff19','#fff6ef67',1)}
- for(let i=0;i<NX;i++){let p0=iso(i+.14,0),p1=iso(i+.84,0);polygon([{x:p0.x,y:p0.y-114},{x:p1.x,y:p1.y-114},{x:p1.x,y:p1.y-28},{x:p0.x,y:p0.y-28}],'#ffffff14','#ffffff67',1)}
- // Posters: use perspective-compatible diamonds on right wall
- for(let i=0;i<3;i++){let p=iso(2.2+i*2.25,0);polygon([{x:p.x-26,y:p.y-119},{x:p.x+22,y:p.y-94},{x:p.x+22,y:p.y-48},{x:p.x-26,y:p.y-73}],'#fffaf7','#c9a4a6',2);polygon([{x:p.x-20,y:p.y-112},{x:p.x+15,y:p.y-94},{x:p.x+15,y:p.y-57},{x:p.x-20,y:p.y-75}],['#f1bbcb','#c5b2d9','#e9c7b7'][i]);line(p.x-16,p.y-85,p.x+11,p.y-75,'#fff9',2)}
- let plaque=iso(0,3.65);polygon([{x:plaque.x-39,y:plaque.y-114},{x:plaque.x+36,y:plaque.y-75},{x:plaque.x+36,y:plaque.y-46},{x:plaque.x-39,y:plaque.y-85}],'#a45d80','#f8dce7',2);ctx.save();ctx.translate(plaque.x-26,plaque.y-89);ctx.rotate(.47);ctx.fillStyle='#fff7f8';ctx.font='bold 12px Georgia';ctx.fillText('MUSE',0,0);ctx.restore();
- // Wall vintage lamps
- let locs=[iso(0,1.05),iso(0,6.5),iso(4.3,0),iso(7.3,0)];locs.forEach((p,i)=>{ellipse(p.x,p.y-93,12,17,'#f8dab57a');line(p.x,p.y-108,p.x,p.y-88,'#a47777',3);ellipse(p.x,p.y-89,7,7,'#fff0c2');});
-}
-function drawFloor(){let p=tilePoly(0,0),r=iso(NX,NY),b=iso(0,NY),c=iso(NX,0);polygon([b,r,{x:r.x,y:r.y+21},{x:b.x,y:b.y+21}],'#c49b92','#b88987');polygon([r,c,{x:c.x,y:c.y+21},{x:r.x,y:r.y+21}],'#b78c84','#ab817b');
- for(let x=0;x<NX;x++){for(let y=0;y<NY;y++){let color=(x+y)%2===0?'#f5e5d9':'#f9ede2';polygon(tilePoly(x,y),color,'#ead5c8',.75);let pt=tilePoly(x,y);line(pt[0].x+2,pt[0].y+1,pt[1].x-2,pt[1].y+1,'#fff9ee50',.9)}}
- // tiled border
- let a=iso(0,0);polygon([a,c,r,b],null,'#e2c4b9',3);line(b.x,b.y,r.x,r.y,'#fff3ec',3);line(c.x,c.y,r.x,r.y,'#fff3ec',3);
- // Entrance rug on front corner
- let q=iso(8.35,7.15);ctx.save();ctx.translate(q.x,q.y);ctx.transform(1,.48,-1,.48,0,0);rr(-28,-19,56,38,3,'#ce9da6','#b87b94');rr(-23,-14,46,28,2,'#e7b9bf','#fff2e9');ctx.restore();
-}
-function shadow(rx=30,ry=12){ellipse(0,-1,rx,ry,'#75595727')}
-function cube(w,depth,height,top='#edcfc2',front='#c59d92',right='#a77d7a'){let d=depth;polygon([{x:-w/2,y:-height},{x:0,y:-height-d/2},{x:w/2,y:-height},{x:0,y:-height+d/2}],top,'#ac888144');polygon([{x:-w/2,y:-height},{x:0,y:-height+d/2},{x:0,y:d/2},{x:-w/2,y:0}],front);polygon([{x:0,y:-height+d/2},{x:w/2,y:-height},{x:w/2,y:0},{x:0,y:d/2}],right)}
-function drawPlant(){shadow(18,8);cube(27,17,20,'#e4bf9d','#b67767','#9d6158');ellipse(0,-22,13,5,'#7b503d');line(0,-24,0,-73,'#648a68',3);let leaves=[[-20,-50],[-14,-72],[16,-55],[20,-75],[-5,-84],[7,-96],[9,-37]];leaves.forEach(([x,y],i)=>{line(0,-57,x,y,'#77987a',2);ctx.save();ctx.translate(x,y);ctx.rotate(i*.85);ellipse(0,0,13,7,i%2?'#79a98a':'#5c9582');ellipse(-3,-2,4,2,'#b4cfac70');ctx.restore()})}
-function drawMirror(){shadow(20,7);line(-16,-13,-16,-102,'#ac8080',5);line(17,-13,17,-102,'#ac8080',5);ctx.save();ctx.translate(1,-74);ctx.rotate(-.13);rr(-22,-51,44,95,10,'#b8859d','#916b7f');rr(-17,-46,34,85,9,gradient(-12,-40,20,50,'#eaf7f3','#bdd2d9'),'#fff1d7');polygon([{x:-10,y:-38},{x:7,y:-38},{x:-10,y:1}],'#ffffff75');line(-5,-39,11,11,'#ffffff55',3);ctx.restore()}
-function drawMachine(t){shadow(33,10);line(-22,-3,-22,-42,'#9f7f77',5);line(25,-3,25,-42,'#8d6f68',5);cube(72,33,9,'#eecdb6','#cba191','#a97e7e');rr(-25,-61,35,18,5,'#f6eff0','#9d9191');rr(4,-69,20,26,4,'#d7a0ab','#9b7a85');rr(-20,-67,24,9,4,'#fefafa','#ccc1bc');line(-10,-48,-10,-36,'#615766',1);line(13,-43,13,-35,'#89777b',2);line(-25,-36,8,-36,'#ffffff',2);rr(-30,-76,9,12,3,'#c9908d');line(-25,-75,-25,-82,'#7e6785',2);if(state.activeJob){let pulse=(Math.sin(t*14)+1)/2;line(-10,-47,-10,-37+pulse*3,'#48444b',1.5);ellipse(9,-72,3+pulse*2,3+pulse*2,'#f7eebcbb')}}
-function drawRack(o,t){shadow(35,11);line(-27,0,-27,-61,'#9c7786',4);line(28,0,28,-61,'#8b6a78',4);line(-33,-4,-17,-4,'#c9a3a4',3);line(19,-4,35,-4,'#c9a3a4',3);line(-29,-61,30,-61,'#e9d0cf',6);line(-29,-61,30,-61,'#966f7d',2);const palette=o.collection==='dress'?['#ac83b8','#f1a8b1','#b4adcf','#dc9db4']:o.collection==='jacket'?['#7d999f','#c4988b','#8b7991','#cabca7']:['#d8879f','#faf0d2','#aabac5','#e3b5b1'];for(let i=0;i<4;i++){let x=-21+i*14;line(x,-57,x,-51,'#977c76',1.5);line(x-5,-49,x,-53,'#b9a6a7',1.2);line(x,-53,x+5,-49,'#b9a6a7',1.2);if(o.collection==='dress'){polygon([{x:x-5,y:-48},{x:x+5,y:-48},{x:x+5,y:-43},{x:x+11,y:-22},{x:x-11,y:-22},{x:x-5,y:-43}],palette[i],'#ffffff50',1)}else if(o.collection==='jacket'){polygon([{x:x-5,y:-48},{x:x-10,y:-42},{x:x-11,y:-34},{x:x-6,y:-33},{x:x-4,y:-40},{x:x-5,y:-24},{x:x+6,y:-24},{x:x+5,y:-40},{x:x+7,y:-33},{x:x+11,y:-35},{x:x+10,y:-42},{x:x+5,y:-48}],palette[i]);line(x,-48,x,-30,'#fff8f070',1)}else{polygon([{x:x-5,y:-49},{x:x-11,y:-45},{x:x-11,y:-37},{x:x-6,y:-34},{x:x-5,y:-41},{x:x-5,y:-23},{x:x+6,y:-23},{x:x+6,y:-41},{x:x+7,y:-34},{x:x+12,y:-37},{x:x+10,y:-45},{x:x+5,y:-49}],palette[i]);line(x,-44,x,-24,'#ffffff50',1)}}rr(-12,-70,25,8,3,'#faf5ec','#e6d1d0');ctx.fillStyle='#b06c8d';ctx.font='bold 6px sans-serif';ctx.fillText(o.collection==='top'?'NEW':o.collection==='dress'?'LOVE':'CHIC',-8,-64);}
-function drawCounter(){shadow(44,15);cube(100,47,45,'#f8e1d2','#ca91a6','#a77690');polygon([{x:-50,y:-45},{x:0,y:-21},{x:0,y:23},{x:-50,y:0}],'#c58da0');line(-43,-34,-43,-7,'#e1b5c2',1);rr(-36,-36,30,19,5,'#fff5ee','#ad7b8d');ctx.fillStyle='#ad678b';ctx.font='italic 15px Georgia';ctx.fillText('M',-26,-22);line(0,-56,24,-69,'#665d67',3);polygon([{x:5,y:-72},{x:25,y:-82},{x:43,y:-73},{x:23,y:-63}],'#514d58','#35313b');polygon([{x:7,y:-70},{x:25,y:-78},{x:40,y:-73},{x:23,y:-65}],'#e8e5e4');rr(19,-50,21,5,2,'#76616e');ellipse(-27,-59,9,5,'#dfbba5');line(-27,-62,-27,-78,'#698c75',2);ellipse(-27,-80,9,7,'#d9859e')}
-function drawBooth(){shadow(31,14);cube(64,48,104,'#e7c0c2','#bc8a9c','#9a7188');polygon([{x:-32,y:-104},{x:0,y:-82},{x:0,y:20},{x:-32,y:0}],'#d8b2b2');polygon([{x:0,y:-82},{x:32,y:-104},{x:32,y:0},{x:0,y:20}],'#946b83');polygon([{x:-8,y:-77},{x:22,y:-92},{x:22,y:-9},{x:-8,y:5}],'#5f4a65');polygon([{x:-9,y:-80},{x:7,y:-86},{x:5,y:5},{x:-8,y:9}],'#d594ac');polygon([{x:8,y:-87},{x:25,y:-96},{x:24,y:-10},{x:6,y:1}],'#e6b3c3');for(let i=0;i<3;i++)line(-5+i*5,-72,-5+i*5,0,'#efc5d05a',1);ellipse(2,-103,34,8,'#fff0e3');line(-28,-105,28,-105,'#bd8f8e',4)}
-function drawMannequin(){shadow(20,7);line(0,-3,0,-24,'#846c69',4);line(-18,-3,18,-3,'#af8c86',4);polygon([{x:-12,y:-83},{x:11,y:-83},{x:9,y:-62},{x:14,y:-39},{x:-13,y:-39},{x:-9,y:-62}],'#d47794');polygon([{x:-12,y:-52},{x:12,y:-52},{x:22,y:-24},{x:-22,y:-24}],'#e7a0b1');line(-10,-79,0,-66,'#f8dce0',2);line(0,-66,9,-79,'#f8dce0',2);ellipse(0,-94,9,11,'#efcfb7');line(-4,-106,4,-106,'#a67766',2)}
-function drawSofa(){shadow(39,12);cube(84,43,22,'#e8b6c6','#ad728d','#96617d');rr(-40,-67,80,36,13,'#c985a5','#a76b87');rr(-34,-55,68,24,9,'#e3abc2','#e3bdc9');rr(-41,-47,18,28,7,'#d595af');rr(23,-47,18,28,7,'#bc799b');rr(-14,-43,27,14,5,'#f5cbcd')}
-function drawObject(o,t,alpha=1){let p=center(o);ctx.save();ctx.translate(p.x,p.y);ctx.globalAlpha*=alpha;switch(o.type){case'plant':drawPlant();break;case'mirror':drawMirror();break;case'machine':drawMachine(t);break;case'rack':drawRack(o,t);break;case'counter':drawCounter();break;case'booth':drawBooth();break;case'mannequin':drawMannequin();break;case'sofa':drawSofa();break;}if(o.id===runtime.selected){ellipse(0,7,30,8,'#e27da233');line(-22,12,22,12,'#b65383',2)}ctx.restore()}
-const hairColors=['#5b3b38','#6f5052','#d7ac79','#2d303b','#a65a43','#8c7564'];const skins=['#f7d6bd','#c78e73','#e7b391','#ad7763','#efd8bc','#9d6954'];const outfits=['#d98f9f','#89aaaf','#b5a1c3','#ceaa8c','#8e9f83','#b67c95'];
-function drawPerson(c,t){let p=iso(c.x,c.y);ctx.save();ctx.translate(p.x,p.y);let bob=Math.sin(t*5+c.seed)*1.3;let moving=['in','toCounter','exit'].includes(c.mode);let step=moving?Math.sin(t*13+c.seed)*3:0;ctx.translate(0,bob);shadow(14,6);line(-6,-9,-5+step,-23,'#554b5b',4);line(6,-9,6-step,-23,'#554b5b',4);ellipse(-5+step,-8,6,3,'#624c58');ellipse(6-step,-8,6,3,'#624c58');let cloth=outfits[c.style%outfits.length];polygon([{x:-12,y:-45},{x:12,y:-45},{x:18,y:-19},{x:-18,y:-19}],cloth,'#987e8c66');polygon([{x:-11,y:-47},{x:11,y:-47},{x:13,y:-31},{x:-13,y:-31}],shade(cloth,12));line(-11,-42,-19+step*.5,-28,skins[c.style%skins.length],5);line(11,-42,19-step*.5,-28,skins[c.style%skins.length],5);ellipse(0,-62,14,16,skins[c.style%skins.length]);ellipse(0,-68,15,12,hairColors[c.style%hairColors.length]);polygon([{x:-14,y:-70},{x:12,y:-75},{x:11,y:-64},{x:-13,y:-65}],hairColors[c.style%hairColors.length]);if(c.style%3===0)ellipse(10,-62,7,14,hairColors[c.style%hairColors.length]);ellipse(-5,-61,1.2,1.8,'#57454a');ellipse(5,-61,1.2,1.8,'#57454a');line(-2,-55,3,-55,'#a76669',1);if(c.mode==='browse'){ctx.translate(0,Math.sin(t*3+c.seed)*2);ellipse(13,-30,5,7,'#f1dac3')}if(c.mode==='pay')ellipse(18,-30,8,5,'#e6d2b2');ctx.restore()}
-function drawWorker(t){drawPerson({x:7.75,y:3.45,mode:'pay',style:6,seed:1},t);drawPerson({x:2.1,y:2.08,mode:'browse',style:3,seed:3},t)}
-function drawOverlay(t){if(runtime.hover){const h=runtime.hover,valid=canPlace(h.x,h.y,runtime.moving);if(runtime.placing||runtime.moving){polygon(tilePoly(h.x,h.y),valid?'#79bba377':'#e56e8066',valid?'#4a9b83':'#c75c78',2);if(valid){if(runtime.placing){drawObject({type:runtime.placing.type,x:h.x,y:h.y,collection:'top'},t,.63)}else{let o=state.items.find(a=>a.id===runtime.moving);if(o)drawObject({...o,x:h.x,y:h.y},t,.55)}}}else{polygon(tilePoly(h.x,h.y),'#fff9f444','#cf8fa85e',1.5)}}
- runtime.floaters.forEach(f=>{ctx.save();ctx.globalAlpha=clamp(f.life,0,1);ctx.font='bold 20px sans-serif';ctx.textAlign='center';ctx.fillStyle=f.color||'#3e936f';ctx.shadowColor='#fff';ctx.shadowBlur=9;ctx.fillText(f.text,f.x,f.y-(1-f.life)*52);ctx.restore()});runtime.particles.forEach(p=>{ctx.save();ctx.globalAlpha=clamp(p.life,0,1);ctx.fillStyle=p.color;ctx.translate(p.x,p.y);ctx.rotate(t*1.8+p.rot);ctx.fillRect(-p.sz/2,-p.sz/2,p.sz,p.sz);ctx.restore()});
-}
-function artLayer(draw){const c=document.createElement('canvas');c.width=W;c.height=H;const previous=ctx;ctx=c.getContext('2d');draw();ctx=previous;return c}
-let cachedBackground,cachedRoom;function cacheArtwork(){cachedBackground=artLayer(drawBackdrop);cachedRoom=artLayer(()=>{drawWalls();drawFloor()})}
-function drawScene(t){ctx.clearRect(0,0,W,H);ctx.drawImage(cachedBackground,0,0);ctx.save();ctx.translate(500,350);ctx.scale(runtime.zoom,runtime.zoom);ctx.translate(-500,-350);ctx.drawImage(cachedRoom,0,0);let sorted=state.items.map(o=>({sort:o.x+o.y+.5,kind:'item',o})).concat(runtime.customers.map(c=>({sort:c.x+c.y,kind:'customer',c}))).concat([{sort:7.75+3.45,kind:'employee',c:{x:7.75,y:3.45,mode:'pay',style:6,seed:1}},{sort:2.1+2.08,kind:'employee',c:{x:2.1,y:2.08,mode:'browse',style:3,seed:3}}]);sorted.sort((a,b)=>a.sort-b.sort).forEach(o=>{if(o.kind==='item')drawObject(o.o,t);else drawPerson(o.c,t)});drawOverlay(t);ctx.restore();}
-function pointInStage(evt){let rect=canvas.getBoundingClientRect();let x=(evt.clientX-rect.left)*W/rect.width,y=(evt.clientY-rect.top)*H/rect.height;return{x:500+(x-500)/runtime.zoom,y:350+(y-350)/runtime.zoom}}
-function pickedTile(evt){const {x,y}=pointInStage(evt);const tile=invIso(x,y);return{x:tile.x,y:tile.y,screenX:x,screenY:y}}
-function tileInBounds(x,y){return x>=0&&y>=0&&x<NX&&y<NY}
-function canPlace(x,y,moving){return tileInBounds(x,y)&&!(x===8&&y===7)&&!state.items.some(o=>o.x===x&&o.y===y&&o.id!==moving)}
-canvas.addEventListener('mousemove',e=>{let p=pickedTile(e);runtime.hover=tileInBounds(p.x,p.y)?p:null});canvas.addEventListener('mouseleave',()=>runtime.hover=null);
-canvas.addEventListener('click',e=>{if(!$('modalShade').classList.contains('hidden'))return;let p=pickedTile(e);if(!tileInBounds(p.x,p.y))return;if(runtime.placing||runtime.moving){if(!canPlace(p.x,p.y,runtime.moving)){toast('Cette case est déjà occupée.','bad');return}if(runtime.placing){let d=runtime.placing;if(state.cash<d.cost){toast('Pas assez d’argent.','bad');cancelPlacement();return}state.cash-=d.cost;state.decorCount++;let o={id:state.nextId++,type:d.type,x:p.x,y:p.y};if(d.type==='rack')o.collection='top';state.items.push(o);runtime.selected=o.id;toast(`${decor[d.type].name} installé !`,'good');log('Un nouveau meuble rejoint la boutique');}else{let o=state.items.find(o=>o.id===runtime.moving);if(o){o.x=p.x;o.y=p.y;runtime.selected=o.id;toast('Meuble déplacé avec succès.')}}cancelPlacement();refresh();save();return}
- let item=state.items.find(o=>o.x===p.x&&o.y===p.y);runtime.selected=item?item.id:null;if(item&&runtime.tab!=='decor'){runtime.tab='decor'}if(item){toast(item.type==='rack'?'Personnalise les vêtements de ce portant.':'Meuble sélectionné.')}renderPanel()});
-canvas.addEventListener('touchstart',e=>{if(!e.touches.length)return;let p=pickedTile(e.touches[0]);runtime.hover=tileInBounds(p.x,p.y)?p:null},{passive:true});
-function sparkle(x,y,n=8){for(let i=0;i<n;i++){runtime.particles.push({x:x+rand(-20,20),y:y+rand(-20,20),vx:rand(-34,34),vy:rand(-70,-15),life:rand(.75,1.3),sz:rand(3,6),rot:rand(-4,4),color:['#dfa6bf','#f5cb79','#9acfbf','#bf9ac2'][i%4]})}}
-function floats(text,x,y,color){runtime.floaters.push({text,x,y,color,life:1.2})}
-let nextCustId=1;
-function chooseRack(){const racks=state.items.filter(o=>o.type==='rack');if(!racks.length)return null;let live=racks.filter(r=>state.stock[r.collection]>0&&state.level>=products[r.collection].level);if(live.length&&Math.random()<.82)return live[Math.floor(Math.random()*live.length)];return racks[Math.floor(Math.random()*racks.length)]}
-function spawnCustomer(){if(runtime.customers.length>=8)return;let rack=chooseRack();if(!rack)return;runtime.customers.push({id:nextCustId++,x:9.4,y:8.3,targetX:rack.x+.66,targetY:rack.y+.72,rackId:rack.id,mode:'in',style:Math.floor(rand(0,6)),seed:rand(0,10),timer:0,speed:rand(1.1,1.8),sold:false})}
-function walk(c,delta){let dx=c.targetX-c.x,dy=c.targetY-c.y,dist=Math.hypot(dx,dy);if(dist<.11){c.x=c.targetX;c.y=c.targetY;return true}let n=Math.min(dist,c.speed*delta);c.x+=dx/dist*n;c.y+=dy/dist*n;return false}
-function sale(c){const rack=state.items.find(o=>o.id===c.rackId);if(!rack||state.stock[rack.collection]<1){c.mode='exit';c.targetX=9.5;c.targetY=8.5;state.rep=clamp(state.rep-1.8,20,100);if(Math.random()<.55)log('Une cliente est repartie faute de stock');return}const p=products[rack.collection];state.stock[rack.collection]--;state.cash+=p.sell;state.sales++;state.rep=clamp(state.rep+.35,20,100);addXP(21);floats('+'+p.sell+' €',center(state.items.find(o=>o.type==='counter')||rack).x,center(state.items.find(o=>o.type==='counter')||rack).y-62,'#448f6c');sparkle(center(rack).x,center(rack).y-45,5);if(state.sales%3===0)log(`${p.short} vendu${p.count===1?'':'s'} · +${money(p.sell)}`,'good');checkMissions();c.mode='exit';c.targetX=9.5;c.targetY=8.5;refresh()}
-function updateCustomers(delta){runtime.customerTimer-=delta;if(runtime.customerTimer<=0){spawnCustomer();runtime.customerTimer=rand(4.2,7.3)}for(let i=runtime.customers.length-1;i>=0;i--){let c=runtime.customers[i];if(c.mode==='in'){if(walk(c,delta)){c.mode='browse';c.timer=rand(1.4,3.4)}}else if(c.mode==='browse'){c.timer-=delta;if(c.timer<=0){let rack=state.items.find(o=>o.id===c.rackId);if(!rack||state.stock[rack.collection]<1){c.mode='exit';c.targetX=9.5;c.targetY=8.5;state.rep=clamp(state.rep-1.2,20,100);if(Math.random()<.4)log('Collection épuisée : une cliente s’en va');}else{let counter=state.items.find(o=>o.type==='counter');c.mode='toCounter';c.targetX=counter.x+.2+rand(0,.5);c.targetY=counter.y+.65+rand(0,.45)}}}else if(c.mode==='toCounter'){if(walk(c,delta)){c.mode='pay';c.timer=state.cashier?1.0:2.1}}else if(c.mode==='pay'){c.timer-=delta;if(c.timer<=0)sale(c)}else if(c.mode==='exit'){if(walk(c,delta))runtime.customers.splice(i,1)}}}
-function update(delta){state.elapsed+=delta;while(state.elapsed>=82){state.elapsed-=82;state.day++;state.cash+=25;log(`Une nouvelle journée commence (+25 €)`);toast('Nouveau jour : bonus de 25 € !','good');}
- if(state.activeJob){state.activeJob.remaining-=delta;if(state.activeJob.remaining<=0){let job=state.activeJob,p=products[job.key];state.stock[job.key]+=p.count;floats('+'+p.count+' '+p.short,center(state.items.find(o=>o.type==='machine')||{x:2,y:1}).x,center(state.items.find(o=>o.type==='machine')||{x:2,y:1}).y-65,'#b35e85');sparkle(400,217,10);toast(`Collection terminée : ${p.count} ${p.short.toLowerCase()} !`,'good');log(`Atelier : ${p.count} ${p.short.toLowerCase()} prêts`,'good');state.activeJob=state.queue.shift()||null;refresh()}}
- updateCustomers(delta);
- runtime.particles.forEach(p=>{p.x+=p.vx*delta;p.y+=p.vy*delta;p.vy+=70*delta;p.life-=delta*1.1});runtime.particles=runtime.particles.filter(p=>p.life>0);runtime.floaters.forEach(f=>f.life-=delta*.62);runtime.floaters=runtime.floaters.filter(f=>f.life>0);
- runtime.uiTimer+=delta;runtime.saveTimer+=delta;if(runtime.uiTimer>.2){runtime.uiTimer=0;renderProductionStatus();renderStats()}if(runtime.saveTimer>6){runtime.saveTimer=0;save()}
-}
-let last=0,lastDraw=0;function loop(ms){let now=ms/1000,delta=Math.min(now-last,.12);if(last===0)delta=0;last=now;update(delta);if(ms-lastDraw>=33){drawScene(now);lastDraw=ms}requestAnimationFrame(loop)}
-window.addEventListener('beforeunload',save);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')save()});cacheArtwork();refresh();requestAnimationFrame(loop);if(!runtime.introShown)setTimeout(showHelp,750);
-})();
-</script>
+
+      <div class="card">
+        <div class="section-title">Mission</div>
+        <div class="level-line">
+          <div>
+            <div class="level-name" id="levelName">Niveau 1</div>
+            <div class="tag" id="levelSubtitle">Miroir Initiatique</div>
+          </div>
+          <div class="chip" id="levelChip">1 / 5</div>
+        </div>
+        <div class="objective" id="objectiveText"></div>
+      </div>
+
+      <div class="card">
+        <div class="meter-title">
+          <span>Encre utilisée</span>
+          <strong id="inkText">0 / 280</strong>
+        </div>
+        <div class="meter"><span id="inkBar"></span></div>
+        <div class="meter-title" style="margin-top:14px;">
+          <span>Objectif expert</span>
+          <strong id="expertText">≤ 150</strong>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="primary" id="playBtn">▶ Jouer</button>
+        <button class="secondary" id="clearBtn">Effacer</button>
+        <button class="secondary" id="retryBtn">↺ Relancer</button>
+        <button class="gold" id="nextBtn" disabled>Suivant</button>
+      </div>
+
+      <div class="small-grid">
+        <div class="stat">
+          <div class="k">Meilleur temps</div>
+          <div class="v" id="bestTime">--</div>
+        </div>
+        <div class="stat">
+          <div class="k">Meilleure encre</div>
+          <div class="v" id="bestInk">--</div>
+        </div>
+        <div class="stat">
+          <div class="k">Temps actuel</div>
+          <div class="v" id="timeNow">0.00 s</div>
+        </div>
+        <div class="stat">
+          <div class="k">Résultat</div>
+          <div class="v" id="resultText">Prêt</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <div class="section-title">Lecture rapide</div>
+        <div class="legend">
+          <div class="legend-item"><span class="dot" style="color:#7ec4ff; background:#7ec4ff;"></span> Monde bleu : c'est ici que tu dessines</div>
+          <div class="legend-item"><span class="dot" style="color:#ffd878; background:#ffd878;"></span> Monde doré : reçoit le trait miroir</div>
+          <div class="legend-item"><span class="dot" style="color:#ff6e84; background:#ff6e84;"></span> Rose = danger. Un seul crash, et la tentative échoue</div>
+          <div class="legend-item"><span class="dot" style="color:#6ef1cc; background:#6ef1cc;"></span> Atteins les deux portails verts pour gagner</div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        Astuce : dessine dans la moitié gauche de l'écran de jeu. Le tracé se copie automatiquement en miroir dans le monde doré. Raccourcis : <strong>R</strong> pour relancer, <strong>C</strong> pour effacer.
+      </div>
+    </aside>
+
+    <main class="play-area">
+      <div class="topbar">
+        <div class="headline"><strong>But :</strong> dessine avant de lancer, puis regarde les deux coureurs tenter de survivre avec exactement le même trait… inversé.</div>
+        <div class="badges">
+          <div class="chip">5 niveaux</div>
+          <div class="chip">1 trait = 2 solutions</div>
+          <div class="chip">Chrono + optimisation d'encre</div>
+        </div>
+      </div>
+      <div class="stage-wrap">
+        <canvas id="gameCanvas"></canvas>
+        <div class="toast" id="toast"></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const el = {
+      levelName: document.getElementById('levelName'),
+      levelSubtitle: document.getElementById('levelSubtitle'),
+      levelChip: document.getElementById('levelChip'),
+      objectiveText: document.getElementById('objectiveText'),
+      inkText: document.getElementById('inkText'),
+      inkBar: document.getElementById('inkBar'),
+      expertText: document.getElementById('expertText'),
+      bestTime: document.getElementById('bestTime'),
+      bestInk: document.getElementById('bestInk'),
+      timeNow: document.getElementById('timeNow'),
+      resultText: document.getElementById('resultText'),
+      playBtn: document.getElementById('playBtn'),
+      clearBtn: document.getElementById('clearBtn'),
+      retryBtn: document.getElementById('retryBtn'),
+      nextBtn: document.getElementById('nextBtn'),
+      toast: document.getElementById('toast')
+    };
+
+    const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    const world = { w: 1000, h: 420 };
+    const colors = {
+      blue: '#7cc2ff',
+      blueSoft: 'rgba(124,194,255,0.14)',
+      gold: '#ffd36c',
+      goldSoft: 'rgba(255,211,108,0.14)',
+      lineBlue: '#8de8ff',
+      lineGold: '#ffe7aa',
+      danger: '#ff6c86',
+      goal: '#5df0c8',
+      ground: '#dfe8ff',
+      trail: 'rgba(255,255,255,0.25)'
+    };
+
+    const levels = [
+      {
+        name: 'Miroir Initiatique',
+        subtitle: 'Un premier trait pour comprendre le principe.',
+        objective: 'Dessine une passerelle douce pour combler le vide dans le monde bleu, tout en aidant le monde doré à monter légèrement vers son portail.',
+        inkMax: 280,
+        parInk: 155,
+        speed: 3.4,
+        startY: 302,
+        goalX: 910,
+        leftPlatforms: [
+          [0, 340, 190, 340],
+          [310, 340, 650, 340],
+          [790, 340, 1000, 340],
+          [640, 285, 760, 285]
+        ],
+        rightPlatforms: [
+          [0, 340, 260, 340],
+          [410, 340, 720, 340],
+          [820, 340, 1000, 340],
+          [705, 285, 850, 285]
+        ],
+        leftHazards: [{ x: 190, y: 340, w: 120, h: 14 }],
+        rightHazards: [{ x: 260, y: 340, w: 150, h: 14 }],
+        leftDecor: [{ x: 508, y: 340, r: 24 }],
+        rightDecor: [{ x: 485, y: 340, r: 30 }]
+      },
+      {
+        name: 'Tension Croisée',
+        subtitle: 'La même courbe sauve l’un et piège l’autre si tu forces trop.',
+        objective: 'Le monde bleu a besoin d’un tremplin, tandis que le doré doit éviter de trop grimper pour ne pas toucher la pointe suspendue.',
+        inkMax: 300,
+        parInk: 182,
+        speed: 3.5,
+        startY: 302,
+        goalX: 920,
+        leftPlatforms: [
+          [0, 340, 170, 340],
+          [315, 340, 520, 340],
+          [670, 340, 1000, 340],
+          [540, 268, 625, 268]
+        ],
+        rightPlatforms: [
+          [0, 340, 240, 340],
+          [365, 340, 550, 340],
+          [685, 340, 1000, 340]
+        ],
+        leftHazards: [{ x: 170, y: 340, w: 145, h: 14 }],
+        rightHazards: [{ x: 240, y: 340, w: 125, h: 14 }, { x: 525, y: 208, w: 22, h: 70, ceiling: true }],
+        leftDecor: [{ x: 585, y: 340, r: 18 }],
+        rightDecor: [{ x: 816, y: 340, r: 22 }]
+      },
+      {
+        name: 'Arche Brisée',
+        subtitle: 'Un arc solide en bas devient un toit risqué en miroir.',
+        objective: 'Crée une courbe élégante capable de faire traverser le grand gouffre bleu, sans envoyer le coureur doré contre son plafond ou ses pics centraux.',
+        inkMax: 335,
+        parInk: 205,
+        speed: 3.8,
+        startY: 300,
+        goalX: 924,
+        leftPlatforms: [
+          [0, 338, 210, 338],
+          [782, 338, 1000, 338],
+          [610, 282, 700, 282]
+        ],
+        rightPlatforms: [
+          [0, 338, 235, 338],
+          [770, 338, 1000, 338],
+          [610, 254, 675, 254],
+          [480, 170, 620, 170]
+        ],
+        leftHazards: [{ x: 210, y: 338, w: 572, h: 14 }],
+        rightHazards: [{ x: 235, y: 338, w: 210, h: 14 }, { x: 560, y: 338, w: 210, h: 14 }, { x: 560, y: 156, w: 22, h: 80, ceiling: true }],
+        leftDecor: [{ x: 650, y: 282, r: 18 }],
+        rightDecor: [{ x: 548, y: 170, r: 15 }]
+      },
+      {
+        name: 'Verrou Doré',
+        subtitle: 'Il faut faire monter l’un sans ralentir l’autre.',
+        objective: 'Le portail doré est perché. Ton trait miroir doit servir d’ascenseur discret, tout en laissant un chemin stable au monde bleu entre deux zones mortelles.',
+        inkMax: 350,
+        parInk: 222,
+        speed: 4.0,
+        startY: 298,
+        goalX: 930,
+        leftPlatforms: [
+          [0, 340, 200, 340],
+          [305, 340, 420, 340],
+          [540, 340, 650, 340],
+          [760, 340, 1000, 340]
+        ],
+        rightPlatforms: [
+          [0, 340, 240, 340],
+          [382, 340, 510, 340],
+          [620, 240, 760, 240],
+          [830, 240, 1000, 240]
+        ],
+        leftHazards: [{ x: 200, y: 340, w: 105, h: 14 }, { x: 420, y: 340, w: 120, h: 14 }, { x: 650, y: 340, w: 110, h: 14 }],
+        rightHazards: [{ x: 240, y: 340, w: 142, h: 14 }, { x: 510, y: 340, w: 110, h: 14 }, { x: 760, y: 240, w: 70, h: 14 }],
+        leftDecor: [{ x: 363, y: 340, r: 16 }, { x: 817, y: 340, r: 16 }],
+        rightDecor: [{ x: 690, y: 240, r: 16 }]
+      },
+      {
+        name: 'Final Parfait',
+        subtitle: 'Le niveau fait pour relancer encore et encore.',
+        objective: 'La ligne idéale est courte, tendue et précise. Tu dois créer un tracé expert qui passe au-dessus des pièges bleus tout en faisant descendre proprement le coureur doré vers sa dernière zone.',
+        inkMax: 365,
+        parInk: 236,
+        speed: 4.2,
+        startY: 300,
+        goalX: 938,
+        leftPlatforms: [
+          [0, 340, 170, 340],
+          [305, 340, 410, 340],
+          [515, 340, 625, 340],
+          [772, 340, 1000, 340],
+          [660, 275, 722, 275]
+        ],
+        rightPlatforms: [
+          [0, 340, 220, 340],
+          [382, 340, 522, 340],
+          [600, 260, 730, 260],
+          [840, 260, 1000, 260],
+          [470, 168, 595, 168]
+        ],
+        leftHazards: [{ x: 170, y: 340, w: 135, h: 14 }, { x: 410, y: 340, w: 105, h: 14 }, { x: 625, y: 340, w: 147, h: 14 }],
+        rightHazards: [{ x: 220, y: 340, w: 162, h: 14 }, { x: 522, y: 340, w: 78, h: 14 }, { x: 730, y: 260, w: 110, h: 14 }, { x: 544, y: 154, w: 20, h: 70, ceiling: true }],
+        leftDecor: [{ x: 690, y: 275, r: 14 }],
+        rightDecor: [{ x: 520, y: 168, r: 16 }, { x: 905, y: 260, r: 18 }]
+      }
+    ];
+
+    let stage = { x: 0, y: 0, w: 100, h: 100 };
+    let panel = { w: 100, h: 100, gap: 32, leftX: 0, rightX: 0, y: 0 };
+    let currentLevel = 0;
+    let state = 'draw';
+    let leftLine = [];
+    let mirrorLine = [];
+    let isDrawing = false;
+    let inkUsed = 0;
+    let runTime = 0;
+    let lastTs = 0;
+    let toastTimer = 0;
+
+    const runnerBase = () => ({
+      x: 72,
+      y: levels[currentLevel].startY,
+      vx: levels[currentLevel].speed,
+      vy: 0,
+      r: 12,
+      alive: true,
+      finished: false,
+      trail: []
+    });
+    let leftRunner = runnerBase();
+    let rightRunner = runnerBase();
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.round(rect.width * DPR);
+      canvas.height = Math.round(rect.height * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      stage.w = rect.width;
+      stage.h = rect.height;
+      stage.x = 0;
+      stage.y = 0;
+
+      const marginX = Math.max(26, rect.width * 0.03);
+      const gap = Math.max(24, rect.width * 0.028);
+      const usableW = rect.width - marginX * 2 - gap;
+      panel.w = usableW / 2;
+      panel.h = Math.min(rect.height - 54, panel.w * (world.h / world.w));
+      panel.gap = gap;
+      panel.leftX = marginX;
+      panel.rightX = marginX + panel.w + gap;
+      panel.y = (rect.height - panel.h) * 0.55;
+    }
+
+    function saveKey(prefix) {
+      return `double_trait_${prefix}_${currentLevel}`;
+    }
+    function getBest(prefix) {
+      const raw = localStorage.getItem(saveKey(prefix));
+      return raw ? Number(raw) : null;
+    }
+    function setBest(prefix, value, smallerBetter = true) {
+      const old = getBest(prefix);
+      if (old == null || (smallerBetter ? value < old : value > old)) {
+        localStorage.setItem(saveKey(prefix), String(value));
+      }
+    }
+
+    function setToast(msg) {
+      el.toast.textContent = msg;
+      el.toast.classList.add('show');
+      toastTimer = performance.now() + 1900;
+    }
+
+    function resetRunners() {
+      leftRunner = runnerBase();
+      rightRunner = runnerBase();
+      leftRunner.y = levels[currentLevel].startY;
+      rightRunner.y = levels[currentLevel].startY;
+      runTime = 0;
+      el.timeNow.textContent = '0.00 s';
+    }
+
+    function loadLevel(index) {
+      currentLevel = ((index % levels.length) + levels.length) % levels.length;
+      leftLine = [];
+      mirrorLine = [];
+      inkUsed = 0;
+      state = 'draw';
+      resetRunners();
+      updateUI('Prêt');
+      setToast(`Niveau ${currentLevel + 1} chargé`);
+    }
+
+    function updateUI(resultOverride) {
+      const lvl = levels[currentLevel];
+      el.levelName.textContent = lvl.name;
+      el.levelSubtitle.textContent = lvl.subtitle;
+      el.levelChip.textContent = `${currentLevel + 1} / ${levels.length}`;
+      el.objectiveText.textContent = lvl.objective;
+      el.inkText.textContent = `${Math.round(inkUsed)} / ${lvl.inkMax}`;
+      el.expertText.textContent = `≤ ${lvl.parInk}`;
+      el.inkBar.style.width = `${Math.max(0, 100 - (inkUsed / lvl.inkMax) * 100)}%`;
+      const bt = getBest('bestTime');
+      const bi = getBest('bestInk');
+      el.bestTime.textContent = bt == null ? '--' : `${bt.toFixed(2)} s`;
+      el.bestInk.textContent = bi == null ? '--' : `${Math.round(bi)}`;
+      el.resultText.textContent = resultOverride || (state === 'draw' ? 'Prêt' : state === 'running' ? 'En cours' : state === 'won' ? 'Réussi !' : 'Échec');
+      el.playBtn.disabled = state === 'running' || leftLine.length < 2;
+      el.clearBtn.disabled = state === 'running' || leftLine.length === 0;
+      el.retryBtn.disabled = state === 'running';
+      el.nextBtn.disabled = state !== 'won';
+    }
+
+    function worldToCanvas(worldX, worldY, side) {
+      const x = side === 'left' ? panel.leftX : panel.rightX;
+      return {
+        x: x + (worldX / world.w) * panel.w,
+        y: panel.y + (worldY / world.h) * panel.h
+      };
+    }
+
+    function canvasToWorld(canvasX, canvasY, side = 'left') {
+      const px = side === 'left' ? panel.leftX : panel.rightX;
+      return {
+        x: ((canvasX - px) / panel.w) * world.w,
+        y: ((canvasY - panel.y) / panel.h) * world.h
+      };
+    }
+
+    function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+    function dist(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+
+    function updateMirror() {
+      mirrorLine = leftLine.map(p => ({ x: world.w - p.x, y: p.y }));
+    }
+
+    function addPoint(p) {
+      const lvl = levels[currentLevel];
+      if (leftLine.length) {
+        const prev = leftLine[leftLine.length - 1];
+        const d = dist(prev, p);
+        if (d < 7) return;
+        if (inkUsed + d > lvl.inkMax) {
+          const remain = lvl.inkMax - inkUsed;
+          if (remain <= 0) {
+            setToast('Plus d’encre disponible');
+            return;
+          }
+          const t = remain / d;
+          p = { x: prev.x + (p.x - prev.x) * t, y: prev.y + (p.y - prev.y) * t };
+          inkUsed = lvl.inkMax;
+          leftLine.push(p);
+          updateMirror();
+          updateUI();
+          setToast('Encre maximale atteinte');
+          return;
+        }
+        inkUsed += d;
+      }
+      leftLine.push(p);
+      updateMirror();
+      updateUI();
+    }
+
+    function pointerPosition(e) {
+      const rect = canvas.getBoundingClientRect();
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    function withinLeftPanel(p) {
+      return p.x >= panel.leftX && p.x <= panel.leftX + panel.w && p.y >= panel.y && p.y <= panel.y + panel.h;
+    }
+
+    canvas.addEventListener('pointerdown', e => {
+      if (state !== 'draw') return;
+      const p = pointerPosition(e);
+      if (!withinLeftPanel(p)) return;
+      isDrawing = true;
+      const w = canvasToWorld(p.x, p.y, 'left');
+      const clamped = { x: clamp(w.x, 0, world.w), y: clamp(w.y, 18, world.h - 18) };
+      addPoint(clamped);
+      canvas.setPointerCapture(e.pointerId);
+    });
+    canvas.addEventListener('pointermove', e => {
+      if (!isDrawing || state !== 'draw') return;
+      const p = pointerPosition(e);
+      const sideClamped = { x: clamp(p.x, panel.leftX, panel.leftX + panel.w), y: clamp(p.y, panel.y, panel.y + panel.h) };
+      const w = canvasToWorld(sideClamped.x, sideClamped.y, 'left');
+      addPoint({ x: clamp(w.x, 0, world.w), y: clamp(w.y, 18, world.h - 18) });
+    });
+    function stopDraw() { isDrawing = false; }
+    canvas.addEventListener('pointerup', stopDraw);
+    canvas.addEventListener('pointercancel', stopDraw);
+    canvas.addEventListener('pointerleave', stopDraw);
+
+    function pointSegmentDistance(px, py, ax, ay, bx, by) {
+      const abx = bx - ax;
+      const aby = by - ay;
+      const apx = px - ax;
+      const apy = py - ay;
+      const ab2 = abx * abx + aby * aby || 1;
+      let t = (apx * abx + apy * aby) / ab2;
+      t = Math.max(0, Math.min(1, t));
+      const cx = ax + abx * t;
+      const cy = ay + aby * t;
+      return { d: Math.hypot(px - cx, py - cy), x: cx, y: cy, t };
+    }
+
+    function platformSegments(side) {
+      const lvl = levels[currentLevel];
+      const base = side === 'left' ? lvl.leftPlatforms : lvl.rightPlatforms;
+      const drawn = side === 'left' ? leftLine : mirrorLine;
+      const segments = [];
+      base.forEach(s => segments.push({ ax: s[0], ay: s[1], bx: s[2], by: s[3], drawn: false }));
+      for (let i = 1; i < drawn.length; i++) {
+        segments.push({ ax: drawn[i-1].x, ay: drawn[i-1].y, bx: drawn[i].x, by: drawn[i].y, drawn: true });
+      }
+      return segments;
+    }
+
+    function hazards(side) {
+      const lvl = levels[currentLevel];
+      return side === 'left' ? lvl.leftHazards : lvl.rightHazards;
+    }
+
+    function integrateRunner(runner, side) {
+      const lvl = levels[currentLevel];
+      if (!runner.alive || runner.finished) return;
+
+      runner.vy += 0.45;
+      runner.x += runner.vx;
+      runner.y += runner.vy;
+
+      const segs = platformSegments(side);
+      for (const s of segs) {
+        const hit = pointSegmentDistance(runner.x, runner.y, s.ax, s.ay, s.bx, s.by);
+        if (hit.d < runner.r) {
+          const dx = runner.x - hit.x;
+          const dy = runner.y - hit.y;
+          let nx = dx / (hit.d || 1);
+          let ny = dy / (hit.d || 1);
+          if (ny < -0.25 || (Math.abs(ny) < 0.25 && runner.y < hit.y)) {
+            const push = runner.r - hit.d;
+            runner.x += nx * push;
+            runner.y += ny * push;
+            const dot = runner.vx * nx + runner.vy * ny;
+            if (dot < 0) {
+              runner.vx -= dot * nx;
+              runner.vy -= dot * ny;
+            }
+            if (ny < -0.3) {
+              runner.vy = Math.min(runner.vy, 0);
+            }
+          }
+        }
+      }
+
+      for (const hz of hazards(side)) {
+        if (!hz.ceiling) {
+          const nearestX = clamp(runner.x, hz.x, hz.x + hz.w);
+          const nearestY = clamp(runner.y, hz.y - 22, hz.y + hz.h);
+          if (Math.hypot(runner.x - nearestX, runner.y - nearestY) < runner.r) runner.alive = false;
+        } else {
+          const nearestX = clamp(runner.x, hz.x, hz.x + hz.w);
+          const nearestY = clamp(runner.y, hz.y, hz.y + hz.h);
+          if (Math.hypot(runner.x - nearestX, runner.y - nearestY) < runner.r) runner.alive = false;
+        }
+      }
+
+      if (runner.y > world.h + 50 || runner.x < -20) runner.alive = false;
+
+      const goalY = side === 'left'
+        ? (lvl.leftPlatforms.at(-1)[1] - 44)
+        : (lvl.rightPlatforms.at(-1)[1] - 44);
+      if (runner.x >= lvl.goalX && runner.y < goalY + 70) {
+        runner.finished = true;
+      }
+
+      runner.trail.push({ x: runner.x, y: runner.y });
+      if (runner.trail.length > 26) runner.trail.shift();
+    }
+
+    function startRun() {
+      if (leftLine.length < 2) {
+        setToast('Dessine d’abord une ligne');
+        return;
+      }
+      resetRunners();
+      state = 'running';
+      updateUI('En cours');
+      setToast('Simulation lancée');
+    }
+
+    function clearLine() {
+      if (state === 'running') return;
+      leftLine = [];
+      mirrorLine = [];
+      inkUsed = 0;
+      state = 'draw';
+      resetRunners();
+      updateUI('Prêt');
+    }
+
+    function retry() {
+      if (state === 'running') return;
+      resetRunners();
+      state = 'draw';
+      updateUI('Prêt');
+    }
+
+    el.playBtn.addEventListener('click', startRun);
+    el.clearBtn.addEventListener('click', clearLine);
+    el.retryBtn.addEventListener('click', retry);
+    el.nextBtn.addEventListener('click', () => loadLevel(currentLevel + 1));
+
+    window.addEventListener('keydown', e => {
+      if (e.key.toLowerCase() === 'r') retry();
+      if (e.key.toLowerCase() === 'c') clearLine();
+      if (e.code === 'Space' && state !== 'running') startRun();
+    });
+
+    function drawBackgroundPanel(side, label, tint) {
+      const x = side === 'left' ? panel.leftX : panel.rightX;
+      const y = panel.y;
+      const w = panel.w;
+      const h = panel.h;
+      const radius = 28;
+
+      ctx.save();
+      const g = ctx.createLinearGradient(x, y, x, y + h);
+      g.addColorStop(0, side === 'left' ? 'rgba(74,138,255,0.16)' : 'rgba(255,206,92,0.14)');
+      g.addColorStop(1, 'rgba(255,255,255,0.02)');
+      roundedRect(x, y, w, h, radius);
+      ctx.fillStyle = g;
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.07)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      ctx.beginPath();
+      roundedRect(x + 12, y + 12, w - 24, 42, 18);
+      ctx.fillStyle = 'rgba(255,255,255,0.06)';
+      ctx.fill();
+
+      for (let i = 0; i < 7; i++) {
+        const gy = y + 70 + (i / 6) * (h - 95);
+        ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x + 18, gy);
+        ctx.lineTo(x + w - 18, gy);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = tint;
+      ctx.font = '700 15px Inter, sans-serif';
+      ctx.fillText(label, x + 24, y + 39);
+
+      ctx.globalAlpha = 0.06;
+      ctx.fillStyle = 'white';
+      for (let i = 0; i < 16; i++) {
+        const sx = x + 28 + (i * 71) % (w - 60);
+        const sy = y + 90 + ((i * 53) % Math.max(1, h - 125));
+        ctx.beginPath(); ctx.arc(sx, sy, (i % 3) + 1.6, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function roundedRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function drawSegmentPath(segments, side, color, width = 8, glow = 0) {
+      ctx.save();
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width;
+      if (glow) ctx.shadowBlur = glow, ctx.shadowColor = color;
+      ctx.beginPath();
+      segments.forEach((s, i) => {
+        const a = worldToCanvas(s.ax, s.ay, side);
+        const b = worldToCanvas(s.bx, s.by, side);
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+      });
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawTerrain(side) {
+      const lvl = levels[currentLevel];
+      const base = side === 'left' ? lvl.leftPlatforms : lvl.rightPlatforms;
+      drawSegmentPath(base.map(s => ({ ax: s[0], ay: s[1], bx: s[2], by: s[3] })), side, 'rgba(223,232,255,0.95)', 9, 8);
+
+      const hz = side === 'left' ? lvl.leftHazards : lvl.rightHazards;
+      hz.forEach(h => {
+        if (!h.ceiling) {
+          const a = worldToCanvas(h.x, h.y, side);
+          const b = worldToCanvas(h.x + h.w, h.y + h.h, side);
+          const w = b.x - a.x;
+          const baseY = a.y;
+          const spikeCount = Math.max(3, Math.floor(w / 18));
+          ctx.save();
+          ctx.fillStyle = 'rgba(255,108,134,0.82)';
+          ctx.shadowBlur = 18;
+          ctx.shadowColor = 'rgba(255,108,134,0.6)';
+          ctx.beginPath();
+          for (let i = 0; i < spikeCount; i++) {
+            const sx = a.x + (i / spikeCount) * w;
+            const sw = w / spikeCount;
+            ctx.moveTo(sx, baseY);
+            ctx.lineTo(sx + sw / 2, baseY - 14);
+            ctx.lineTo(sx + sw, baseY);
+          }
+          ctx.fill();
+          ctx.restore();
+        } else {
+          const a = worldToCanvas(h.x, h.y, side);
+          const b = worldToCanvas(h.x + h.w, h.y + h.h, side);
+          ctx.save();
+          ctx.fillStyle = 'rgba(255,108,134,0.78)';
+          ctx.shadowBlur = 14;
+          ctx.shadowColor = 'rgba(255,108,134,0.5)';
+          roundedRect(a.x, a.y, Math.max(6, b.x - a.x), Math.max(12, b.y - a.y), 8);
+          ctx.fill();
+          ctx.restore();
+        }
+      });
+
+      const goalX = lvl.goalX;
+      const lastPlat = side === 'left' ? lvl.leftPlatforms.at(-1) : lvl.rightPlatforms.at(-1);
+      const flagBaseY = lastPlat[1];
+      const flagBase = worldToCanvas(goalX, flagBaseY, side);
+      const top = worldToCanvas(goalX, flagBaseY - 74, side);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(93,240,200,0.95)';
+      ctx.lineWidth = 4;
+      ctx.shadowBlur = 18;
+      ctx.shadowColor = 'rgba(93,240,200,0.6)';
+      ctx.beginPath();
+      ctx.moveTo(flagBase.x, flagBase.y + 4);
+      ctx.lineTo(top.x, top.y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(top.x, top.y);
+      ctx.lineTo(top.x + 24, top.y + 8);
+      ctx.lineTo(top.x, top.y + 18);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(93,240,200,0.95)';
+      ctx.fill();
+      ctx.restore();
+
+      const decor = side === 'left' ? lvl.leftDecor : lvl.rightDecor;
+      decor.forEach(d => {
+        const p = worldToCanvas(d.x, d.y, side);
+        const scale = panel.w / world.w;
+        ctx.save();
+        const rg = ctx.createRadialGradient(p.x, p.y - 18, 3, p.x, p.y - 18, d.r * scale);
+        rg.addColorStop(0, side === 'left' ? 'rgba(124,194,255,0.4)' : 'rgba(255,211,108,0.4)');
+        rg.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = rg;
+        ctx.beginPath(); ctx.arc(p.x, p.y - 18, d.r * scale, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    function drawPlayer(runner, side, primary, secondary) {
+      if (!runner) return;
+      const p = worldToCanvas(runner.x, runner.y, side);
+
+      runner.trail.forEach((t, i) => {
+        const tp = worldToCanvas(t.x, t.y, side);
+        ctx.save();
+        ctx.globalAlpha = (i + 1) / runner.trail.length * 0.22;
+        ctx.fillStyle = primary;
+        ctx.beginPath(); ctx.arc(tp.x, tp.y, 3 + (i / runner.trail.length) * 2.5, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
+      });
+
+      ctx.save();
+      ctx.shadowBlur = 26;
+      ctx.shadowColor = primary;
+      const grad = ctx.createLinearGradient(p.x, p.y - 12, p.x, p.y + 14);
+      grad.addColorStop(0, primary);
+      grad.addColorStop(1, secondary);
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.ellipse(p.x, p.y, 12, 13, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.beginPath(); ctx.arc(p.x + 3.8, p.y - 3.5, 2.2, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.36)';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(p.x - 4, p.y + 10); ctx.lineTo(p.x + 7, p.y + 10); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawLinePreview(points, side, color, glow) {
+      if (points.length < 2) return;
+      ctx.save();
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = 8;
+      ctx.strokeStyle = color;
+      ctx.shadowBlur = glow;
+      ctx.shadowColor = color;
+      ctx.beginPath();
+      points.forEach((p, i) => {
+        const q = worldToCanvas(p.x, p.y, side);
+        if (i === 0) ctx.moveTo(q.x, q.y);
+        else ctx.lineTo(q.x, q.y);
+      });
+      ctx.stroke();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+      ctx.shadowBlur = 0;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawDividerLine() {
+      const x = panel.leftX + panel.w + panel.gap / 2;
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.setLineDash([8, 8]);
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(x, panel.y - 14);
+      ctx.lineTo(x, panel.y + panel.h + 14);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, stage.w, stage.h);
+      drawBackgroundPanel('left', 'MONDE BLEU • zone de dessin', colors.blue);
+      drawBackgroundPanel('right', 'MONDE DORÉ • miroir automatique', colors.gold);
+      drawDividerLine();
+
+      drawTerrain('left');
+      drawTerrain('right');
+      drawLinePreview(leftLine, 'left', colors.lineBlue, 16);
+      drawLinePreview(mirrorLine, 'right', colors.lineGold, 16);
+      drawPlayer(leftRunner, 'left', '#8ecfff', '#5f83ff');
+      drawPlayer(rightRunner, 'right', '#ffe18b', '#ffab61');
+
+      if (state === 'draw' && leftLine.length < 2) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(255,255,255,0.8)';
+        ctx.font = '700 18px Inter, sans-serif';
+        ctx.fillText('Dessine ici pour créer ta trajectoire', panel.leftX + 28, panel.y + 86);
+        ctx.fillStyle = 'rgba(255,255,255,0.55)';
+        ctx.font = '500 14px Inter, sans-serif';
+        ctx.fillText('Le même trait apparaîtra en miroir dans le monde doré.', panel.leftX + 28, panel.y + 108);
+        ctx.restore();
+      }
+
+      if (state === 'won' || state === 'lost') {
+        const msg = state === 'won' ? 'Niveau réussi !' : 'Tentative échouée';
+        const sub = state === 'won' ? 'Optimise maintenant ton trait ou passe au suivant.' : 'Analyse le problème, ajuste ton trait, et relance.';
+        ctx.save();
+        const w = Math.min(460, stage.w * 0.46);
+        const h = 96;
+        const x = stage.w / 2 - w / 2;
+        const y = 22;
+        roundedRect(x, y, w, h, 22);
+        ctx.fillStyle = 'rgba(10, 18, 38, 0.76)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+        ctx.stroke();
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 26px Inter, sans-serif';
+        ctx.fillText(msg, x + 24, y + 38);
+        ctx.fillStyle = 'rgba(255,255,255,0.75)';
+        ctx.font = '500 15px Inter, sans-serif';
+        ctx.fillText(sub, x + 24, y + 66);
+        ctx.restore();
+      }
+    }
+
+    function evaluateRun() {
+      if (!leftRunner.alive || !rightRunner.alive) {
+        state = 'lost';
+        updateUI('Échec');
+        setToast('Un des deux mondes a cassé la run');
+        return;
+      }
+      if (leftRunner.finished && rightRunner.finished) {
+        state = 'won';
+        setBest('bestTime', runTime, true);
+        setBest('bestInk', inkUsed, true);
+        updateUI('Réussi !');
+        setToast(inkUsed <= levels[currentLevel].parInk ? 'Succès expert : trait très propre !' : 'Succès validé');
+      }
+    }
+
+    function tick(ts) {
+      if (!lastTs) lastTs = ts;
+      const dtMs = Math.min(33, ts - lastTs);
+      lastTs = ts;
+      const stepCount = Math.max(1, Math.round(dtMs / 16.6));
+
+      if (state === 'running') {
+        for (let i = 0; i < stepCount; i++) {
+          runTime += 1 / 60;
+          integrateRunner(leftRunner, 'left');
+          integrateRunner(rightRunner, 'right');
+          evaluateRun();
+          if (state !== 'running') break;
+        }
+        el.timeNow.textContent = `${runTime.toFixed(2)} s`;
+      }
+
+      if (toastTimer && ts > toastTimer) {
+        el.toast.classList.remove('show');
+        toastTimer = 0;
+      }
+
+      render();
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      render();
+    });
+
+    resize();
+    loadLevel(0);
+    updateUI('Prêt');
+    requestAnimationFrame(tick);
+  </script>
 </body>
 </html>

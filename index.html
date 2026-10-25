@@ -662,32 +662,34 @@ body.hunter .dg-lvl{color:#0b2318}
 .dg-trash{font-size:12.5px;line-height:1.6;padding:10px 12px;border-radius:12px;background:rgba(255,189,89,.08);border:1px solid rgba(255,189,89,.25);color:#f0e1d4;margin-bottom:14px}
 .dg-trash b{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#ffd28a;margin-bottom:3px}
 .dg-bosses{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.dgb{display:flex;gap:12px;padding:12px;border-radius:14px;background:rgba(255,236,224,.04);border:1px solid var(--line)}
-.dgb-num{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:800 13px 'Outfit',sans-serif;background:rgba(255,236,224,.08);color:var(--atext);border:1px solid var(--line2)}
+.dgb{display:flex;gap:12px;padding:13px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,236,224,.10);box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.dgb-num{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:800 13px 'Outfit',sans-serif;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));color:var(--atext);border:1px solid rgba(255,236,224,.12)}
 .dgb-main{min-width:0;flex:1}
 .dgb-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.dgb-head b{font-size:15px;color:#fff}
-.dgb-tag{font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--asoft);color:var(--atext)}
+.dgb-tag{font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:rgba(255,236,224,.08);color:var(--atext);border:1px solid rgba(255,236,224,.10)}
 .dgb-vo{font-size:11px;color:var(--muted);font-style:italic;margin-top:1px}
-.dgb-what{margin:6px 0 8px;font-size:13px;line-height:1.6}
-.dgb-tip{font-size:13px;line-height:1.6;color:#fff;padding:9px 11px;border-radius:11px;background:linear-gradient(90deg,var(--asoft),rgba(255,236,224,.03));border-left:3px solid var(--a2)}
+.dgb-what{margin:6px 0 10px;font-size:13px;line-height:1.6}
+.dgb-tip{font-size:13px;line-height:1.6;color:#fff;padding:9px 11px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);box-shadow:inset 3px 0 0 var(--a2)}
 .dgb-tip span{display:block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--atext);margin-bottom:2px}
-@media(max-width:750px){.dg-tag{display:none}.dg-sum{padding:12px}.dg-body{padding:12px}.dgb{padding:10px;gap:9px}}
+@media(max-width:750px){.dg-tag{display:none}.dg-sum{padding:12px}.dg-body{padding:12px}.dgb{padding:11px;gap:9px}}
 
 
-/* Miniatures des boss, intégrées aux fiches de donjon sans perturber les stratégies */
-.dgb-media{position:relative;float:right;display:flex;align-items:center;justify-content:center;flex-direction:column;width:108px;height:117px;max-width:36%;overflow:hidden;margin:0 0 9px 14px;border:1px solid rgba(227,191,143,.25);border-radius:12px;background:radial-gradient(circle at 50% 38%,rgba(84,90,117,.20),#090c14 72%);text-decoration:none;transition:border-color .15s,transform .15s;box-shadow:0 5px 18px rgba(0,0,0,.15)}
-.dgb-media:not(.dgb-media--empty):hover{transform:translateY(-2px);border-color:var(--a2)}
-.dgb-media img{width:100%;height:calc(100% - 19px);object-fit:contain;object-position:center;display:block;min-height:0}
-.dgb-media .dgb-source{height:19px;line-height:19px;font:600 9px 'Outfit',sans-serif;color:#e9cfad;width:100%;text-align:center;letter-spacing:.035em;background:rgba(8,9,16,.88);white-space:nowrap}
-.dgb-media--empty{border-style:dashed;border-color:rgba(227,191,143,.19);box-shadow:none;gap:6px;color:#b8a69b;text-align:center;pointer-events:none;padding:7px}
+/* Miniatures des boss, revues pour un rendu plus propre sur mobile */
+.dgb-media{position:relative;float:right;display:block;width:96px;height:96px;max-width:34%;overflow:hidden;margin:0 0 10px 14px;border-radius:16px;background:linear-gradient(180deg,rgba(19,24,35,.96),rgba(8,11,17,.96));text-decoration:none;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 10px 24px rgba(0,0,0,.26),inset 0 0 0 1px rgba(255,255,255,.07)}
+.dgb-media:after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,236,224,.06);pointer-events:none}
+.dgb-media:not(.dgb-media--empty):hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(0,0,0,.30),inset 0 0 0 1px rgba(255,255,255,.08)}
+.dgb-media img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block;filter:contrast(1.03) saturate(.96) brightness(.96)}
+.dgb-media .dgb-source{position:absolute;right:7px;bottom:7px;height:auto;line-height:1;padding:4px 7px;border-radius:999px;font:700 8px 'Outfit',sans-serif;color:#f4ddba;width:auto;max-width:calc(100% - 14px);letter-spacing:.04em;background:rgba(7,10,16,.78);backdrop-filter:blur(6px);white-space:nowrap;border:1px solid rgba(255,236,224,.12)}
+.dgb-media--empty{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);color:#b8a69b;text-align:center;pointer-events:none;padding:7px}
 .dgb-media--empty>span:not([hidden]){font:700 20px Georgia,serif;color:#a48b70;line-height:1}
-.dgb-media--empty small,.dgb-photo-error{font:700 9px/1.4 'Outfit',sans-serif;letter-spacing:.05em;color:#aa9e9b}
+.dgb-photo-error,.dgb-media--empty small{font:700 9px/1.4 'Outfit',sans-serif;letter-spacing:.05em;color:#aa9e9b}
+.dgb-photo-error{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;background:linear-gradient(180deg,rgba(12,16,24,.92),rgba(7,9,15,.94));}
 .dgb-media--empty .dgb-source{display:none}
 .dgb-rows{clear:both}
-@media(max-width:750px){.dgb-media{width:82px;height:92px;margin-left:9px;margin-bottom:8px;border-radius:9px}.dgb-media img{height:calc(100% - 17px)}.dgb-media .dgb-source{height:17px;line-height:17px;font-size:8px}.dgb-media--empty small{font-size:8px}.dgb-media--empty>span{font-size:17px}}
+@media(max-width:750px){.dgb-media{width:78px;height:78px;margin-left:10px;margin-bottom:8px;border-radius:14px}.dgb-media .dgb-source{right:5px;bottom:5px;font-size:7px;padding:3px 5px}.dgb-media--empty small{font-size:8px}.dgb-media--empty>span{font-size:17px}}
 
-.dgb-rows{display:grid;gap:6px}
-.dgr{font-size:13px;line-height:1.55;color:#fff;padding:7px 10px;border-radius:10px;background:rgba(255,236,224,.04);border-left:3px solid var(--line2)}
+.dgb-rows{display:grid;gap:7px}
+.dgr{font-size:13px;line-height:1.55;color:#fff;padding:8px 10px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);box-shadow:inset 3px 0 0 var(--line2)}
 .dgr span{display:inline-block;min-width:104px;margin-right:6px;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .dgr-f{border-left-color:var(--a2)}.dgr-f span{color:var(--atext)}
 .dgr-i{border-left-color:#6fb7ff}.dgr-i span{color:#9fd0ff}
@@ -1064,9 +1066,9 @@ const DG_BOSS_IMAGES={"rfc":["https://static.icy-veins.com/images/classic/ragefi
 // Les nouveaux boss Forever n'utilisent jamais de portrait d'un autre PNJ pour combler une absence.
 function dgBossImage(d,b,i){
  const url=(DG_BOSS_IMAGES[d.id]||[])[i];
- if(!url)return `<div class="dgb-media dgb-media--empty" role="img" aria-label="Visuel non documenté pour ${esc(b.n)}"><span>◈</span><small>${/Nouveau/.test(d.tag)?'VISUEL FOREVER<br>À VENIR':'PHOTO NON<br>DISPONIBLE'}</small></div>`;
+ if(!url)return `<div class="dgb-media dgb-media--empty" role="img" aria-label="Visuel non documenté pour ${esc(b.n)}"><span>◈</span><small>${/Nouveau/.test(d.tag)?'VISUEL FOREVER<br>À VENIR':'VISUEL NON<br>DISPONIBLE'}</small></div>`;
  const src=url.includes('icy-veins.com')?'Icy Veins':url.includes('zamimg.com')?'Wowhead':url.includes('hcguides.com')?'HC Guides':url.includes('warcraftdb.com')?'Warcraft DB':url.includes('buffed.de')?'Buffed':'Out of Games';
- return `<a class="dgb-media" target="_blank" rel="noopener noreferrer" href="${url}" title="Agrandir : ${esc(b.n)} — source ${src}" aria-label="Voir le visuel de ${esc(b.n)} (${src})"><img src="${url}" alt="${esc(b.n)} — World of Warcraft Classic" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false;this.parentElement.classList.add('dgb-media--empty')"><span class="dgb-photo-error" hidden>VISUEL<br>INDISPONIBLE</span><small class="dgb-source">${src}</small></a>`;
+ return `<a class="dgb-media" target="_blank" rel="noopener noreferrer" href="${url}" title="Ouvrir le visuel de ${esc(b.n)} — source ${src}" aria-label="Voir le visuel de ${esc(b.n)} (${src})"><img src="${url}" alt="${esc(b.n)} — World of Warcraft Classic" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false;this.parentElement.classList.add('dgb-media--empty')"><span class="dgb-photo-error" hidden>VISUEL<br>INDISPONIBLE</span><small class="dgb-source">${src}</small></a>`;
 }
 
 const DGF={f:'all',open:{}};
